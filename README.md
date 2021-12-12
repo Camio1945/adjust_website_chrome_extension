@@ -108,3 +108,10 @@ function removeElementsByIdArrOfCsdnArticle() {
 ### 5.3 刷新插件
 去浏览器扩展程序里刷新插件。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/5e4998580bdd43868910f8c82b9b0e24.png)
+## 六、弹窗“关闭开发人员模式下的扩展”
+打开谷歌浏览器时可能弹出以下提醒：
+![在这里插入图片描述](https://img-blog.csdnimg.cn/69223d9d53af42e5b9b6b8da87481120.png)
+这个提醒没有办法通过浏览器自身的设置来关闭的，我目前的做法是安装了[火绒安全软件](https://www.huorong.cn/)里的`安全工具`里的`弹窗拦截`功能里的`截图拦截`功能来实现的。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/740c7bd04a4a4b3d84fcf66b65ad8bc5.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/c0317c88f7274848b6dc1f04b9912e11.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/86549010052c428eb92650cceb3b2f04.png)
