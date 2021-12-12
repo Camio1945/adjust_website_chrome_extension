@@ -1,4 +1,3 @@
-# adjust_website_chrome_extension
 一个给程序员使用的、用于按个人意愿调整网页布局的谷歌开发者插件。
 
 使用场景：以CSDN为例。
