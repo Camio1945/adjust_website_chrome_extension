@@ -51,6 +51,7 @@ function removeElementsByIdArrOfCsdnArticle() {
     "asideArchive",       // 左侧 - 最新文章
     "footerRightAds",     // 广告
     "toolBarBox",         // 文章后面 - 工具栏（赞、踩、分享等）
+    "treeSkill",          // 文章后面 - 进一步学习相关知识
   ]);
 }
 
@@ -58,6 +59,7 @@ function removeElementsByIdArrOfCsdnArticle() {
 function removeElementsByClassArrOfCsdnArticle() {
   removeElementsByClassArr([
     "article-info-box",         // 文章标题与正文中间的作者、时间等信息
+    "column-group",             // 文章标题与正文中间的专栏信息
     "comment-box",              // 文章后面 - 评论
     "recommend-box",            // 文章后面 - 相关推荐信息
     "template-box",             // 文章后面 - 年份、皮肤主题、返回首页
