@@ -1,0 +1,2 @@
+# adjust_website_chrome_extension
+一个用于调整网页的谷歌插件。
