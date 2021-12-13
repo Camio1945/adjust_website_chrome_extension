@@ -42,6 +42,7 @@ function adjustCsdnArticle() {
 function removeElementsByIdArrOfCsdnArticle() {
   removeElementsByIdArr([
     "csdn-toolbar",        // 顶部 - 工具条
+    "asideCustom",         // 左侧 - 定制边栏信息
     "asideProfile",        // 左侧 - 作者信息
     "asideSearchArticle",  // 左侧 - 搜索博主文章
     "asideHotArticle",     // 左侧 - 热门文章
