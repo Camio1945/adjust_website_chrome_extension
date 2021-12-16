@@ -70,6 +70,7 @@ function removeElementsByClassArrOfCsdnArticle() {
     "leftPop",                  // 浏览器缩放的提醒
     "passport-login-container", // 登录弹窗（注：可能无效，因为本插件只会在前10秒进行处理，此时可能没有登录弹窗）
     "csdn-highschool-select",   // 学生认证弹窗
+    "csdn-highschool-window",   // 学生认证弹窗
     "adblock",                  // 对于adblock等谷歌插件的提醒
   ]);
 }
