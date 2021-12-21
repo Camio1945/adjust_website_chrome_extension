@@ -1,11 +1,69 @@
 /** 每隔50毫秒执行页面的调整操作（不用担心长时间消耗CPU，后续代码会在10秒后停止执行interval） */
 let interval = window.setInterval(function () {
+  adjustJianShuArticle();        // 调整简书文章详情页面
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
-  adjustCsdnArticle(); // 调整csdn博客的文章页面
+  adjustCsdnArticle();           // 调整csdn博客的文章页面
 }, 50);
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** -------------------------- 调整简书文章详情页面 开始 -------------------------- */
+function adjustJianShuArticle() {
+  // 如果是简书文章详情页面，才处理
+  if (isHrefContainAnyStrInArr(["https://www.jianshu.com/p/"])) {
+    removeElementsByIdArr([
+      "note-fixed-ad-container", // 广告：你也可以写文赚赞赏
+      "free-reward-panel",       // 赞赏
+      "note-ad",                 // APP广告
+      "comment-list",            // 评论区
+    ])
+    removeElementsByClassArr([
+      "navbar-fixed-top",        // 顶部栏
+      "author",                  // 作者信息
+      "follow-detail",           // 作者信息
+      "show-foot",               // 版权
+      "meta-bottom",             // 分享区域
+      "note-bottom",             // 推荐阅读
+      "side-tool",               // 右侧工具
+    ])
+    specialHandleOfJianShuArticle();
+  }
+}
+
+/** 简书页面的特殊处理（简书有两种页面，一种是使用规范的id和class名称的（如：author），另一种的id和class是随机的，如：_6S_NkV） */
+function specialHandleOfJianShuArticle() {
+  // id为__next的元素存在时，表示页面的class是不规范的，需要特殊处理
+  if ($("#__next").length) {
+    $("header").remove();                                        // 顶部栏
+    $("aside").remove();                                         // 右边栏
+    $("footer").remove();                                        // 底部栏
+    $("#__next").children().eq(1).remove();                      // 左侧：N赞、赞赏、更多好文
+    if (!$("article").prev().is("h1")) {
+      $("article").prev().remove();                              // 正文前面的作者信息
+    }
+    $("article").next().remove();                                // 正文后的几个元素都不需要
+    $("article").next().remove();                                // 正文后的几个元素都不需要
+    $("article").next().remove();                                // 正文后的几个元素都不需要
+    $("article").next().remove();                                // 正文后的几个元素都不需要
+    $("article").next().remove();                                // 正文后的几个元素都不需要
+    $("#note-page-comment").next().remove();                     // 推荐阅读
+    $("#note-page-comment").remove();                            // 评论区
+    $("section[aria-label=baidu-ad]").remove();                  // 百度广告
+    $("img[alt=reward]").parent().parent().remove();             // 抽奖
+    $("div[role=main]").children().eq(0).css("width", "800px");  // 调整内容区域的宽度
+    $("h1").css("margin-top", "0px");                            // 调整标题距离顶部的高度
+  } else {
+    if ($("canvas").next().is("img")) {                          // APP广告和赞赏支持
+      $("canvas").parent().parent().remove();
+    }
+    $(".post").css("width", "800px");                            // 调整内容区的宽度
+    $("body").css("margin-top", "-90px");                        // 调整文章距离顶部的高度
+  }
+
+}
+
+/** -------------------------- 调整简书文章详情页面 结束 -------------------------- */
 
 /** -------------------------- 调整stackoverflow问题页面 开始 -------------------------- */
 function adjustStackoverflowQuestion() {

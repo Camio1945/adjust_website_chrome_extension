@@ -9,7 +9,8 @@
     {
       "matches": [
         "https://blog.csdn.net/*",
-        "https://stackoverflow.com/*"
+        "https://stackoverflow.com/*",
+        "https://www.jianshu.com/*"
       ],
       "js": [
         "jquery-1.11.0.min.js",
