@@ -1,5 +1,6 @@
 /** 每隔50毫秒执行页面的调整操作（不用担心长时间消耗CPU，后续代码会在10秒后停止执行interval） */
 let interval = window.setInterval(function () {
+  adjustZhiHu();                 // 调整知乎
   adjustJianShuArticle();        // 调整简书文章详情页面
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
   adjustCsdnArticle();           // 调整csdn博客的文章页面
@@ -8,6 +9,40 @@ let interval = window.setInterval(function () {
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** -------------------------- 调整知乎 开始 -------------------------- */
+function adjustZhiHu() {
+  // 知乎通用页面处理
+  if (isHrefContainAnyStrInArr(["https://www.zhihu.com"])) {
+    // 自动关闭登录框
+    if ($("button[aria-label=关闭]")) {
+      $("button[aria-label=关闭]").click();
+    }
+    removeElementsBySelectorArr([
+      ".SearchSideBar",                 // 搜索页 - 右边栏
+      ".Question-sideColumn",           // 问题页 - 右边栏
+      ".ContentLayout-sideColumn",      // 答案页 - 右边栏
+    ])
+    $(".SearchMain").css("width", "1000px");               // 搜索页，内容宽度改为1000
+    $(".ContentLayout-mainColumn").css("width", "1000px"); // 问题页，内容宽度改为1000
+    $(".Question-mainColumn").css("width", "1000px");      // 答案页，内容宽度改为1000
+  }
+  // 调整知乎答案页面
+  adjustZhiHuAnswer();
+}
+
+/** 调整知乎答案页面 */
+function adjustZhiHuAnswer() {
+  // 如果是知乎答案页面，才处理
+  if (isHrefContainAnyStrInArr(["https://www.zhihu.com/question"])) {
+    removeElementsBySelectorArr([
+      "header",                    // 顶部条
+      ".Question-mainColumnLogin", // 登录横条
+    ])
+  }
+}
+
+/** -------------------------- 调整知乎 结束 -------------------------- */
 
 /** -------------------------- 调整简书文章详情页面 开始 -------------------------- */
 function adjustJianShuArticle() {
@@ -191,6 +226,21 @@ function removeElementsByIdArr(arr) {
 function removeElementsByClassArr(arr) {
   for (let i = 0; i < arr.length; i++) {
     $("." + arr[i]).remove();
+  }
+}
+
+/**
+ * 根据选择器来移除元素
+ * 示例：
+ * removeElementsBySelectorArr(
+ *   "#asideNewNps",  // 根据id=asideNewNps来删除元素
+ *   ".author",       // 根据class=author来删除元素
+ *   "header",        // 根据标签header来删除元素
+ * )
+ *  */
+function removeElementsBySelectorArr(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    $(arr[i]).remove();
   }
 }
 
