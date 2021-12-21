@@ -3,6 +3,7 @@ let interval = window.setInterval(function () {
   adjustJianShuArticle();        // 调整简书文章详情页面
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
   adjustCsdnArticle();           // 调整csdn博客的文章页面
+  useMicrosoftYaHeiFont();       // 使用微软雅黑字体
 }, 50);
 
 /** 10秒以后停止间隔执行 */
@@ -60,7 +61,6 @@ function specialHandleOfJianShuArticle() {
     $(".post").css("width", "800px");                            // 调整内容区的宽度
     $("body").css("margin-top", "-90px");                        // 调整文章距离顶部的高度
   }
-
 }
 
 /** -------------------------- 调整简书文章详情页面 结束 -------------------------- */
@@ -191,6 +191,14 @@ function removeElementsByIdArr(arr) {
 function removeElementsByClassArr(arr) {
   for (let i = 0; i < arr.length; i++) {
     $("." + arr[i]).remove();
+  }
+}
+
+/** 使用微软雅黑字体 */
+function useMicrosoftYaHeiFont() {
+  let elementArr = ["p", "h1", "h2", "h4", "h4", "h5", "h6"];
+  for (let element of elementArr) {
+    $(element).css("font-family", 'Microsoft YaHei');
   }
 }
 
