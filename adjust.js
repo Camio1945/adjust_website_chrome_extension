@@ -1,5 +1,6 @@
 /** 每隔50毫秒执行页面的调整操作（不用担心长时间消耗CPU，后续代码会在10秒后停止执行interval） */
 let interval = window.setInterval(function () {
+  adjustCoolshell();             // 调整酷壳
   adjustCnblogsArticle();        // 调整cnblogs文章详情页面
   adjustZhiHu();                 // 调整知乎
   adjustJianShuArticle();        // 调整简书文章详情页面
@@ -10,6 +11,26 @@ let interval = window.setInterval(function () {
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** -------------------------- 调整酷壳 开始 -------------------------- */
+function adjustCoolshell() {
+  // 如果酷壳页面，才处理
+  if (isHrefContainAnyStrInArr(["https://coolshell.cn/"])) {
+    removeElementsByIdArr([
+      "masthead",                  // 头部
+      "colophon",                  // 尾部
+      "custom_html-3",             // 本站公告
+      "custom_html-8",             // 友情链接
+      "meta-5",                    // 功能
+      "custom_html-6",             // CNZZ
+    ])
+    removeElementsByClassArr([
+      "avatar"                     // 头像（一般都加载不出来）
+    ])
+  }
+}
+
+/** -------------------------- 调整酷壳 结束 -------------------------- */
 
 /** -------------------------- 调整cnblogs文章详情页面 开始 -------------------------- */
 function adjustCnblogsArticle() {

@@ -12,7 +12,8 @@
         "https://stackoverflow.com/*",
         "https://www.jianshu.com/*",
         "https://www.zhihu.com/*",
-        "https://www.cnblogs.com/*"
+        "https://www.cnblogs.com/*",
+        "https://coolshell.cn/*"
       ],
       "js": [
         "jquery-1.11.0.min.js",
