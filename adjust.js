@@ -1,5 +1,6 @@
 /** 每隔50毫秒执行页面的调整操作（不用担心长时间消耗CPU，后续代码会在10秒后停止执行interval） */
 let interval = window.setInterval(function () {
+  adjustCnblogsArticle();        // 调整cnblogs文章详情页面
   adjustZhiHu();                 // 调整知乎
   adjustJianShuArticle();        // 调整简书文章详情页面
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
@@ -9,6 +10,26 @@ let interval = window.setInterval(function () {
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** -------------------------- 调整cnblogs文章详情页面 开始 -------------------------- */
+function adjustCnblogsArticle() {
+  // 如果是cnblogs文章详情页面，才处理
+  if (isHrefContainAnyStrInArr(["https://www.cnblogs.com/"]) && isHrefContainAnyStrInArr(["/p/"])) {
+    removeElementsByIdArr([
+      "header",                    // 头部
+      "sideBar",                   // 右边栏
+      "navigator",                 // 导航
+      "MySignature",               // 作者签名
+      "blog_post_info_block",      // 文章信息
+      "comment_form",              // 评论
+      "blog-comments-placeholder", // 评论
+      "footer",                    // 底部
+    ])
+    $(".forFlow").css("margin", "0 160px"); // 文章内容居中
+  }
+}
+
+/** -------------------------- 调整cnblogs文章详情页面 结束 -------------------------- */
 
 /** -------------------------- 调整知乎 开始 -------------------------- */
 function adjustZhiHu() {
