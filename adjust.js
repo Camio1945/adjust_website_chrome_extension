@@ -1,6 +1,7 @@
 /** 每隔50毫秒执行页面的调整操作（不用担心长时间消耗CPU，后续代码会在10秒后停止执行interval） */
 let interval = window.setInterval(function () {
-  adjustCoolshell();             // 调整酷壳
+  adjustProcesson();             // 调整processon（流程图网站）
+  adjustCoolshell();             // 调整酷壳（技术博客）
   adjustCnblogsArticle();        // 调整cnblogs文章详情页面
   adjustZhiHu();                 // 调整知乎
   adjustJianShuArticle();        // 调整简书文章详情页面
@@ -12,9 +13,25 @@ let interval = window.setInterval(function () {
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
 
+/** -------------------------- 调整processon 开始 -------------------------- */
+function adjustProcesson() {
+  // 如果是processon页面，才处理
+  if (isHrefContainAnyStrInArr(["https://www.processon.com/"])) {
+    removeElementsByIdArr([
+      "banner_2",  // 首页 - 顶部 - 达人招募计划
+    ])
+    removeElementsByClassArr([
+      "app-down",  // 首页 - 右下角 - 下载移动版
+      "activity-con", // 文件列表页 -右上角 - 活动信息
+    ])
+  }
+}
+
+/** -------------------------- 调整processon 结束 -------------------------- */
+
 /** -------------------------- 调整酷壳 开始 -------------------------- */
 function adjustCoolshell() {
-  // 如果酷壳页面，才处理
+  // 如果是酷壳页面，才处理
   if (isHrefContainAnyStrInArr(["https://coolshell.cn/"])) {
     removeElementsByIdArr([
       "masthead",                  // 头部
