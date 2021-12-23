@@ -37,6 +37,7 @@ function adjustCnblogsArticle() {
   // 如果是cnblogs文章详情页面，才处理
   if (isHrefContainAnyStrInArr(["https://www.cnblogs.com/"]) && isHrefContainAnyStrInArr(["/p/"])) {
     removeElementsByIdArr([
+      "top_nav",                   // 头部
       "header",                    // 头部
       "sideBar",                   // 右边栏
       "navigator",                 // 导航
