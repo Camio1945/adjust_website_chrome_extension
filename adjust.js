@@ -46,7 +46,6 @@ function adjustCnblogsArticle() {
       "blog-comments-placeholder", // 评论
       "footer",                    // 底部
     ])
-    $(".forFlow").css("margin", "0 160px"); // 文章内容居中
   }
 }
 
