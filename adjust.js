@@ -202,6 +202,7 @@ function removeElementsByIdArrOfCsdnArticle() {
     "asideNewComments",    // 左侧 - 最新评论
     "asideNewNps",         // 左侧 - 您愿意向朋友推荐“博客详情页”吗
     "asideArchive",        // 左侧 - 最新文章
+    "asideTopicStar",      // 左侧 - 博客之星
     "footerRightAds",      // 广告
     "blogColumnPayAdvert", // 标题下面 - 广告（如：C语言练习题资源合集：海量资源免费下载）
     "toolBarBox",          // 文章后面 - 工具栏（赞、踩、分享等）
