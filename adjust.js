@@ -98,6 +98,9 @@ function adjustZhiHuAnswer() {
       "header",                    // 顶部条
       ".Question-mainColumnLogin", // 登录横条
     ])
+    // 以下两行用于删除盐选答案
+    $(".KfeCollection-OrdinaryLabel-content").closest("div[class=List-item]").remove();
+    $(".KfeCollection-IntroCard-newStyle-pc").closest("div[class=List-item]").remove();
   }
 }
 
