@@ -44,6 +44,15 @@ function adjustCoolshell() {
     removeElementsByClassArr([
       "avatar"                     // 头像（一般都加载不出来）
     ])
+    $("a[href='https://coolshell.cn/404/']").parent().parent().remove(); // 删除404链接
+    // 文章中的微信公众号图片
+    let weixin = $("img[src='https://coolshell.cn/wp-content/uploads/2020/03/coolshell.weixin.jpg']");
+    if (weixin.length) {
+      // 如果微信公众号图片后面紧跟着的是小程序的图片，则认为是我们要删除的元素
+      if (weixin.next().is("img")) {
+        weixin.parent().remove()
+      }
+    }
   }
 }
 
@@ -98,7 +107,8 @@ function adjustZhiHuAnswer() {
       "header",                    // 顶部条
       ".Question-mainColumnLogin", // 登录横条
     ])
-    // 以下两行用于删除盐选答案
+    // 以下几行用于删除盐选答案
+    $(".KfeCollection-OrdinaryLabel-content").closest("div[class='Card AnswerCard']").remove();
     $(".KfeCollection-OrdinaryLabel-content").closest("div[class=List-item]").remove();
     $(".KfeCollection-IntroCard-newStyle-pc").closest("div[class=List-item]").remove();
   }
