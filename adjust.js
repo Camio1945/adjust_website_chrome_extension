@@ -251,7 +251,7 @@ function adjustWidthAndMenuOfCsdnArticle() {
       $("main").css("width", "80%");        // 由于有目录，所以把内容区域的宽度设置为80%，左侧的20%用于显示目录
       // 通过修改样式来固定目录位置在左上角
       $(".blog_container_aside").attr("style",
-        "position: fixed; top: 8px; z-index: 99; left: 50px; width: 300px; bottom: auto;");
+        "position: fixed; top: 8px; z-index: 99; left: 5px; width: 300px; bottom: auto;");
       // 以下代码是防止CSDN自己的一些额外处理（有时候会导致目录不显示）
       let blogContainerAsideCopyOuterHtml = $(".blog_container_aside")
         .prop("outerHTML").replace("blog_container_aside", "blog_container_aside_copy");
