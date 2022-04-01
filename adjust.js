@@ -220,6 +220,7 @@ function removeElementsByIdArrOfCsdnArticle() {
     "blogColumnPayAdvert", // 标题下面 - 广告（如：C语言练习题资源合集：海量资源免费下载）
     "toolBarBox",          // 文章后面 - 工具栏（赞、踩、分享等）
     "treeSkill",           // 文章后面 - 进一步学习相关知识
+    "recommendNps",        // 文章后面 - “相关推荐”对你有帮助么？
   ]);
 }
 
