@@ -221,6 +221,7 @@ function removeElementsByIdArrOfCsdnArticle() {
     "toolBarBox",          // 文章后面 - 工具栏（赞、踩、分享等）
     "treeSkill",           // 文章后面 - 进一步学习相关知识
     "recommendNps",        // 文章后面 - “相关推荐”对你有帮助么？
+    "blogExtensionBox",    // 文章后面 - 自定义的广告
   ]);
 }
 
