@@ -186,7 +186,7 @@ function adjustStackoverflowQuestion() {
     "top-bar",         // 顶部栏
     "s-sidebarwidget", // 博客（The Overflow Blog）
   ])
-  $(".container").css("margin-top", "-50px"); // 由于去掉了顶部栏，因此内容区要往上提
+  // $(".container").css("margin-top", "-50px"); // 由于去掉了顶部栏，因此内容区要往上提
   $("#content").css("width", $("#content").css("max-width")); // 调整宽度为最大宽度
 }
 
