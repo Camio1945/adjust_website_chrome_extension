@@ -65,6 +65,7 @@ function adjustCnblogsArticle() {
     removeElementsByIdArr([
       "top_nav",                   // 头部
       "header",                    // 头部
+      "githubRibbon",              // Fork on GitHub
       "sideBar",                   // 右边栏
       "navigator",                 // 导航
       "MySignature",               // 作者签名
@@ -73,6 +74,7 @@ function adjustCnblogsArticle() {
       "blog-comments-placeholder", // 评论
       "footer",                    // 底部
     ])
+    removeElementsByClassArr(["charm-bar-wrapper"]) // 会员力量
   }
 }
 
@@ -240,6 +242,8 @@ function removeElementsByClassArrOfCsdnArticle() {
     "csdn-highschool-select",   // 学生认证弹窗
     "csdn-highschool-window",   // 学生认证弹窗
     "adblock",                  // 对于adblock等谷歌插件的提醒
+    "blog_container_aside",     // 博客之星
+
   ]);
 }
 
