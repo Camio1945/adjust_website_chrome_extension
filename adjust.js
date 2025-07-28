@@ -7,11 +7,51 @@ let interval = window.setInterval(function () {
   adjustJianShuArticle();        // 调整简书文章详情页面
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
   adjustCsdnArticle();           // 调整csdn博客的文章页面
+  adjustTsccMeituan();           // 美团闪购
   useMicrosoftYaHeiFont();       // 使用微软雅黑字体
 }, 50);
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** 调整美团闪购 */
+function adjustTsccMeituan() {
+  // 如果是美团闪购页面，才处理
+  if (isHrefContainAnyStrInArr(["https://tscc.meituan.com/"])) {
+    // 1. Create the button
+    const btn = document.createElement('button');
+    btn.textContent = '空框赋值';
+
+    // 2a. Inline styling approach
+    Object.assign(btn.style, {
+      position: 'fixed',
+      bottom: '15px',
+      left: '15px',
+      zIndex: '1000',
+      padding: '8px 12px',
+      background: '#007bff',
+      color: '#fff',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer'
+    });
+
+    // 3. Append to the page
+    document.body.appendChild(btn);
+
+    // 4. (Optional) Add an event handler
+    btn.addEventListener('click', () => {
+      const inputs = document.querySelectorAll(".roo-table .roo-input");
+      for (const input of inputs) {
+        if (!input.value) {
+          let id = Math.random().toString(36).slice(2, 10);
+          simulateTyping(input, id, {delay: 20})
+        }
+      }
+    });
+    clearInterval(interval)
+  }
+}
 
 /** -------------------------- 调整processon 开始 -------------------------- */
 function adjustProcesson() {
@@ -325,10 +365,69 @@ function removeElementsBySelectorArr(arr) {
 
 /** 使用微软雅黑字体 */
 function useMicrosoftYaHeiFont() {
-  let elementArr = ["p", "h1", "h2", "h4", "h4", "h5", "h6"];
-  for (let element of elementArr) {
-    $(element).css("font-family", 'Microsoft YaHei');
+  let websites = [
+    "https://blog.csdn.net/",
+    "https://stackoverflow.com/",
+    "https://www.jianshu.com/",
+    "https://www.zhihu.com/",
+    "https://www.cnblogs.com/",
+    "https://coolshell.cn/",
+    "https://www.quora.com/"
+  ]
+  if (isHrefContainAnyStrInArr(websites)) {
+    let elementArr = ["p", "span", "h1", "h2", "h4", "h4", "h5", "h6"];
+    for (let element of elementArr) {
+      if ($(element).css("font-family") !== '\"Microsoft YaHei\"') {
+        $(element).css("font-family", '\"Microsoft YaHei\"');
+        console.log("已使用微软雅黑字体")
+      }
+    }
   }
+}
+
+/**
+ * Simulate human‐like typing into an input or textarea.
+ *
+ * @param {HTMLInputElement|HTMLTextAreaElement} input
+ * @param {string} text
+ * @param {object} options
+ * @param {number} options.delay   Base delay between keystrokes in ms (default: 100)
+ * @param {number} options.variance  Random jitter in ms to vary typing speed (default: 50)
+ * @returns {Promise<void>}
+ */
+async function simulateTyping(input, text, options = {}) {
+  const {delay = 100, variance = 50} = options;
+
+  // Bring focus into the field
+  input.focus();
+
+  for (const char of text) {
+    const keyCode = char.charCodeAt(0);
+    const eventInit = {
+      key: char,
+      code: `Key${char.toUpperCase()}`,
+      charCode: keyCode,
+      keyCode: keyCode,
+      bubbles: true,
+    };
+
+    // Key down
+    input.dispatchEvent(new KeyboardEvent('keydown', eventInit));
+
+    // Update the value and fire input event
+    input.value += char;
+    input.dispatchEvent(new Event('input', {bubbles: true}));
+
+    // Key up
+    input.dispatchEvent(new KeyboardEvent('keyup', eventInit));
+
+    // Wait before typing next character (with a bit of randomness)
+    const jitter = (Math.random() - 0.5) * variance * 2;
+    await new Promise(resolve => setTimeout(resolve, delay + jitter));
+  }
+
+  // Final change event in case some listeners watch for `change`
+  input.dispatchEvent(new Event('change', {bubbles: true}));
 }
 
 /** -------------------------- 公共方法定义 结束 -------------------------- */

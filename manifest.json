@@ -14,7 +14,9 @@
         "https://www.zhihu.com/*",
         "https://www.cnblogs.com/*",
         "https://coolshell.cn/*",
-        "https://www.processon.com/*"
+        "https://www.processon.com/*",
+        "https://tscc.meituan.com/*",
+        "https://www.quora.com/*"
       ],
       "js": [
         "jquery-1.11.0.min.js",
