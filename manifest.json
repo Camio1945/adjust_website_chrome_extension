@@ -16,7 +16,9 @@
         "https://coolshell.cn/*",
         "https://www.processon.com/*",
         "https://tscc.meituan.com/*",
-        "https://www.quora.com/*"
+        "https://saas-retail.ele.me/*",
+        "https://www.quora.com/*",
+        "https://www.youtube.com/*"
       ],
       "js": [
         "jquery-1.11.0.min.js",

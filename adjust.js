@@ -8,11 +8,50 @@ let interval = window.setInterval(function () {
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
   adjustCsdnArticle();           // 调整csdn博客的文章页面
   adjustTsccMeituan();           // 美团闪购
+  adjustSaasEleMe();             // 调整翱象主档商品
+  adjustYouTube();             // 调整 YouTube
   useMicrosoftYaHeiFont();       // 使用微软雅黑字体
 }, 50);
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** 调整 YouTube */
+function adjustYouTube() {
+  if (isHrefContainAnyStrInArr(["https://www.youtube.com/"])) {
+    removeElementsByIdArr(["secondary"])
+    removeElementsByClassArr(["html5-endscreen"])
+  }
+}
+
+/** 调整翱象主档商品 */
+function adjustSaasEleMe() {
+  console.log(window.location.href)
+  // 如果是翱象主档商品管理页面，才处理
+  if (isHrefContainAnyStrInArr(["https://saas-retail.ele.me/app/saas-retail-bundles/goods-manage-v2.0/index.html#/online"])) {
+    clearInterval(interval)
+    return
+    setTimeout(() => {
+      let i = 0;
+      for (let ele of document.getElementsByTagName("a")) {
+        if (ele.innerText === "删除" && ele.parentNode.parentNode.previousSibling.innerText.indexOf("2025") > -1) {
+          i++;
+          // ele.click()
+          setTimeout(() => {
+            for (let btn of document.getElementsByTagName("button")) {
+              if (btn.innerText === "确 定") {
+                // btn.click()
+              }
+            }
+          }, 10_000 * i)
+          if (i >= 100) {
+            break
+          }
+        }
+      }
+    }, 6_000)
+  }
+}
 
 /** 调整美团闪购 */
 function adjustTsccMeituan() {
@@ -25,8 +64,8 @@ function adjustTsccMeituan() {
     // 2a. Inline styling approach
     Object.assign(btn.style, {
       position: 'fixed',
-      bottom: '15px',
-      left: '15px',
+      bottom: '73px',
+      right: '200px',
       zIndex: '1000',
       padding: '8px 12px',
       background: '#007bff',
