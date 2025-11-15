@@ -7,7 +7,7 @@ let interval = window.setInterval(function () {
   adjustJianShuArticle();        // 调整简书文章详情页面
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
   adjustCsdnArticle();           // 调整csdn博客的文章页面
-  adjustTsccMeituan();           // 美团闪购
+  // adjustTsccMeituan();           // 美团闪购
   adjustSaasEleMe();             // 调整翱象主档商品
   adjustYouTube();             // 调整 YouTube
   useMicrosoftYaHeiFont();       // 使用微软雅黑字体
