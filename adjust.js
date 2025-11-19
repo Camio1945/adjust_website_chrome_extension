@@ -1,5 +1,6 @@
 /** 每隔50毫秒执行页面的调整操作（不用担心长时间消耗CPU，后续代码会在10秒后停止执行interval） */
 let interval = window.setInterval(function () {
+  adjustLanguageReactor();       // 调整语言学习网站
   adjustProcesson();             // 调整processon（流程图网站）
   adjustCoolshell();             // 调整酷壳（技术博客）
   adjustCnblogsArticle();        // 调整cnblogs文章详情页面
@@ -15,6 +16,48 @@ let interval = window.setInterval(function () {
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** 调整语言学习网站 */
+function adjustLanguageReactor() {
+  console.log(window.location.href)
+  // 如果是翱象主档商品管理页面，才处理
+  if (isHrefContainAnyStrInArr(["https://www.languagereactor.com/video-file"])) {
+    clearInterval(interval)
+    // 1. Create the button
+    const btn = document.createElement('button');
+    btn.textContent = 'Adjust';
+
+    // 2a. Inline styling approach
+    Object.assign(btn.style, {
+      position: 'fixed',
+      bottom: '10px',
+      left: '100px',
+      zIndex: '1000',
+      padding: '8px 12px',
+      background: '#141618',
+      color: '#fff',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer'
+    });
+
+    // 3. Append to the page
+    document.body.appendChild(btn);
+
+    // 4. (Optional) Add an event handler
+    btn.addEventListener('click', () => {
+      let element = document.querySelector(".video-subs-wrap-fullscreen");
+      if (!element) {
+        btn.textContent = 'Adjust (Element Not Exists)';
+      } else {
+        btn.textContent = 'Adjust (Element Exists)';
+        element.style.bottom = "-180px";
+        element.style.width = "100%";
+        element.style.maxWidth = "1111px";
+      }
+    });
+  }
+}
 
 /** 调整 YouTube */
 function adjustYouTube() {
