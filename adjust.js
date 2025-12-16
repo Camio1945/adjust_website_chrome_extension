@@ -1,5 +1,6 @@
 /** 每隔50毫秒执行页面的调整操作（不用担心长时间消耗CPU，后续代码会在10秒后停止执行interval） */
 let interval = window.setInterval(function () {
+  adjustHutool();                // 调整hutool
   adjustLanguageReactor();       // 调整语言学习网站
   adjustProcesson();             // 调整processon（流程图网站）
   adjustCoolshell();             // 调整酷壳（技术博客）
@@ -10,16 +11,37 @@ let interval = window.setInterval(function () {
   adjustCsdnArticle();           // 调整csdn博客的文章页面
   // adjustTsccMeituan();           // 美团闪购
   adjustSaasEleMe();             // 调整翱象主档商品
-  adjustYouTube();             // 调整 YouTube
-  useMicrosoftYaHeiFont();       // 使用微软雅黑字体
-}, 50);
+  adjustYouTube();               // 调整 YouTube
+}, 250);
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
 
+/** 调整Hutool */
+function adjustHutool() {
+  if (isHrefContainAnyStrInArr(["https://doc.hutool.cn"])) {
+    let element = document.querySelector(".page-slot-top");
+    if (element) {
+      clearInterval(interval)
+      removeElementsByClassArr(["page-slot-top", "custom-html-window-lb", "sidebar-slot-top"])
+      document.querySelector(".sidebar-links")
+        .style.setProperty("margin-top", "-10px", "important");
+      setInterval(() => {
+        const links = document.querySelectorAll('a[href="https://ai.hutool.cn?from=hutool"]');
+        for (let link of links) {
+          if (link.parentNode.className === "nav-item") {
+            link.parentNode.style.display = "none";
+          } else {
+            link.style.display = "none";
+          }
+        }
+      }, 500)
+    }
+  }
+}
+
 /** 调整语言学习网站 */
 function adjustLanguageReactor() {
-  console.log(window.location.href)
   // 如果是翱象主档商品管理页面，才处理
   if (isHrefContainAnyStrInArr(["https://www.languagereactor.com/video-file"])) {
     clearInterval(interval)
@@ -69,7 +91,6 @@ function adjustYouTube() {
 
 /** 调整翱象主档商品 */
 function adjustSaasEleMe() {
-  console.log(window.location.href)
   // 如果是翱象主档商品管理页面，才处理
   if (isHrefContainAnyStrInArr(["https://saas-retail.ele.me/app/saas-retail-bundles/goods-manage-v2.0/index.html#/online"])) {
     clearInterval(interval)
@@ -442,28 +463,6 @@ function removeElementsByClassArr(arr) {
 function removeElementsBySelectorArr(arr) {
   for (let i = 0; i < arr.length; i++) {
     $(arr[i]).remove();
-  }
-}
-
-/** 使用微软雅黑字体 */
-function useMicrosoftYaHeiFont() {
-  let websites = [
-    "https://blog.csdn.net/",
-    "https://stackoverflow.com/",
-    "https://www.jianshu.com/",
-    "https://www.zhihu.com/",
-    "https://www.cnblogs.com/",
-    "https://coolshell.cn/",
-    "https://www.quora.com/"
-  ]
-  if (isHrefContainAnyStrInArr(websites)) {
-    let elementArr = ["p", "span", "h1", "h2", "h4", "h4", "h5", "h6"];
-    for (let element of elementArr) {
-      if ($(element).css("font-family") !== '\"Microsoft YaHei\"') {
-        $(element).css("font-family", '\"Microsoft YaHei\"');
-        console.log("已使用微软雅黑字体")
-      }
-    }
   }
 }
 
