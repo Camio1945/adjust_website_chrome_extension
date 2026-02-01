@@ -8,19 +8,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://blog.csdn.net/*",
-        "https://stackoverflow.com/*",
-        "https://www.jianshu.com/*",
-        "https://www.zhihu.com/*",
-        "https://www.cnblogs.com/*",
-        "https://coolshell.cn/*",
-        "https://www.processon.com/*",
-        "https://tscc.meituan.com/*",
-        "https://saas-retail.ele.me/*",
-        "https://www.quora.com/*",
-        "https://www.youtube.com/*",
-        "https://www.languagereactor.com/*",
-        "https://doc.hutool.cn/*"
+        "https://bm.baofoo.com/*"
       ],
       "js": [
         "jquery-1.11.0.min.js",
