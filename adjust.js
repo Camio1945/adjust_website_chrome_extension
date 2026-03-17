@@ -11,10 +11,18 @@ let interval = window.setInterval(function () {
   adjustCsdnArticle();           // 调整csdn博客的文章页面
   // adjustTsccMeituan();           // 美团闪购
   adjustYouTube();               // 调整 YouTube
+  adjustDoubao();                // 调整 豆包
 }, 250);
 
 /** 10秒以后停止间隔执行 */
 setTimeout(() => clearInterval(interval), 10 * 1000)
+
+/** 调整 豆包 */
+function adjustDoubao() {
+  if (isHrefContainAnyStrInArr(["https://www.doubao.com/chat/"])) {
+    removeElementsByIdArr(["experiment-guidance-suggestions"])
+  }
+}
 
 /** 调整Hutool */
 function adjustHutool() {

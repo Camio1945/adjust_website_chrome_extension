@@ -20,7 +20,8 @@
         "https://www.quora.com/*",
         "https://www.youtube.com/*",
         "https://www.languagereactor.com/*",
-        "https://doc.hutool.cn/*"
+        "https://doc.hutool.cn/*",
+        "https://www.doubao.com/*"
       ],
       "js": [
         "adjust.js"
