@@ -56,7 +56,7 @@ function removeElementsByIdArr(arr) {
 /** 根据class删除元素 */
 function removeElementsByClassArr(arr) {
   for (let i = 0; i < arr.length; i++) {
-    $("." + arr[i]).remove();
+    document.querySelectorAll("." + arr[i]).forEach(el => el.remove());
   }
 }
 
@@ -71,7 +71,7 @@ function removeElementsByClassArr(arr) {
  *  */
 function removeElementsBySelectorArr(arr) {
   for (let i = 0; i < arr.length; i++) {
-    $(arr[i]).remove();
+    document.querySelectorAll(arr[i]).forEach(el => el.remove());
   }
 }
 
