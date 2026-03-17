@@ -10,7 +10,6 @@ let interval = window.setInterval(function () {
   adjustStackoverflowQuestion(); // 调整stackoverflow问题页面
   adjustCsdnArticle();           // 调整csdn博客的文章页面
   // adjustTsccMeituan();           // 美团闪购
-  adjustSaasEleMe();             // 调整翱象主档商品
   adjustYouTube();               // 调整 YouTube
 }, 250);
 
@@ -89,33 +88,6 @@ function adjustYouTube() {
   }
 }
 
-/** 调整翱象主档商品 */
-function adjustSaasEleMe() {
-  // 如果是翱象主档商品管理页面，才处理
-  if (isHrefContainAnyStrInArr(["https://saas-retail.ele.me/app/saas-retail-bundles/goods-manage-v2.0/index.html#/online"])) {
-    clearInterval(interval)
-    return
-    setTimeout(() => {
-      let i = 0;
-      for (let ele of document.getElementsByTagName("a")) {
-        if (ele.innerText === "删除" && ele.parentNode.parentNode.previousSibling.innerText.indexOf("2025") > -1) {
-          i++;
-          // ele.click()
-          setTimeout(() => {
-            for (let btn of document.getElementsByTagName("button")) {
-              if (btn.innerText === "确 定") {
-                // btn.click()
-              }
-            }
-          }, 10_000 * i)
-          if (i >= 100) {
-            break
-          }
-        }
-      }
-    }, 6_000)
-  }
-}
 
 /** 调整美团闪购 */
 function adjustTsccMeituan() {
@@ -187,13 +159,21 @@ function adjustCoolshell() {
     removeElementsByClassArr([
       "avatar"                     // 头像（一般都加载不出来）
     ])
-    $("a[href='https://coolshell.cn/404/']").parent().parent().remove(); // 删除404链接
+    // 删除404链接
+    document.querySelectorAll("a[href='https://coolshell.cn/404/']").forEach(el => {
+      if (el.parentNode && el.parentNode.parentNode) {
+        el.parentNode.parentNode.remove();
+      }
+    });
     // 文章中的微信公众号图片
-    let weixin = $("img[src='https://coolshell.cn/wp-content/uploads/2020/03/coolshell.weixin.jpg']");
-    if (weixin.length) {
+    let weixin = document.querySelector("img[src='https://coolshell.cn/wp-content/uploads/2020/03/coolshell.weixin.jpg']");
+    if (weixin) {
       // 如果微信公众号图片后面紧跟着的是小程序的图片，则认为是我们要删除的元素
-      if (weixin.next().is("img")) {
-        weixin.parent().remove()
+      let nextEle = weixin.nextElementSibling;
+      if (nextEle && nextEle.tagName === "IMG") {
+        if (weixin.parentNode) {
+          weixin.parentNode.remove();
+        }
       }
     }
   }
@@ -228,17 +208,18 @@ function adjustZhiHu() {
   // 知乎通用页面处理
   if (isHrefContainAnyStrInArr(["https://www.zhihu.com"])) {
     // 自动关闭登录框
-    if ($("button[aria-label=关闭]")) {
-      $("button[aria-label=关闭]").click();
+    let closeBtn = document.querySelector("button[aria-label=关闭]");
+    if (closeBtn) {
+      closeBtn.click();
     }
     removeElementsBySelectorArr([
       ".SearchSideBar",                 // 搜索页 - 右边栏
       ".Question-sideColumn",           // 问题页 - 右边栏
       ".ContentLayout-sideColumn",      // 答案页 - 右边栏
     ])
-    $(".SearchMain").css("width", "1000px");               // 搜索页，内容宽度改为1000
-    $(".ContentLayout-mainColumn").css("width", "1000px"); // 问题页，内容宽度改为1000
-    $(".Question-mainColumn").css("width", "1000px");      // 答案页，内容宽度改为1000
+    document.querySelectorAll(".SearchMain").forEach(el => el.style.width = "1000px");               // 搜索页，内容宽度改为1000
+    document.querySelectorAll(".ContentLayout-mainColumn").forEach(el => el.style.width = "1000px"); // 问题页，内容宽度改为1000
+    document.querySelectorAll(".Question-mainColumn").forEach(el => el.style.width = "1000px");      // 答案页，内容宽度改为1000
   }
   // 调整知乎答案页面
   adjustZhiHuAnswer();
@@ -253,9 +234,16 @@ function adjustZhiHuAnswer() {
       ".Question-mainColumnLogin", // 登录横条
     ])
     // 以下几行用于删除盐选答案
-    $(".KfeCollection-OrdinaryLabel-content").closest("div[class='Card AnswerCard']").remove();
-    $(".KfeCollection-OrdinaryLabel-content").closest("div[class=List-item]").remove();
-    $(".KfeCollection-IntroCard-newStyle-pc").closest("div[class=List-item]").remove();
+    document.querySelectorAll(".KfeCollection-OrdinaryLabel-content").forEach(el => {
+      let card = el.closest("div[class='Card AnswerCard']");
+      if (card) card.remove();
+      let listItem = el.closest("div[class=List-item]");
+      if (listItem) listItem.remove();
+    });
+    document.querySelectorAll(".KfeCollection-IntroCard-newStyle-pc").forEach(el => {
+      let listItem = el.closest("div[class=List-item]");
+      if (listItem) listItem.remove();
+    });
   }
 }
 
@@ -287,31 +275,54 @@ function adjustJianShuArticle() {
 /** 简书页面的特殊处理（简书有两种页面，一种是使用规范的id和class名称的（如：author），另一种的id和class是随机的，如：_6S_NkV） */
 function specialHandleOfJianShuArticle() {
   // id为__next的元素存在时，表示页面的class是不规范的，需要特殊处理
-  if ($("#__next").length) {
-    $("header").remove();                                        // 顶部栏
-    $("aside").remove();                                         // 右边栏
-    $("footer").remove();                                        // 底部栏
-    $("#__next").children().eq(1).remove();                      // 左侧：N赞、赞赏、更多好文
-    if (!$("article").prev().is("h1")) {
-      $("article").prev().remove();                              // 正文前面的作者信息
+  let next = document.getElementById("__next");
+  if (next) {
+    document.querySelectorAll("header").forEach(el => el.remove());                                        // 顶部栏
+    document.querySelectorAll("aside").forEach(el => el.remove());                                         // 右边栏
+    document.querySelectorAll("footer").forEach(el => el.remove());                                        // 底部栏
+    if (next.children.length > 1) {
+      next.children[1].remove();                      // 左侧：N赞、赞赏、更多好文
     }
-    $("article").next().remove();                                // 正文后的几个元素都不需要
-    $("article").next().remove();                                // 正文后的几个元素都不需要
-    $("article").next().remove();                                // 正文后的几个元素都不需要
-    $("article").next().remove();                                // 正文后的几个元素都不需要
-    $("article").next().remove();                                // 正文后的几个元素都不需要
-    $("#note-page-comment").next().remove();                     // 推荐阅读
-    $("#note-page-comment").remove();                            // 评论区
-    $("section[aria-label=baidu-ad]").remove();                  // 百度广告
-    $("img[alt=reward]").parent().parent().remove();             // 抽奖
-    $("div[role=main]").children().eq(0).css("width", "800px");  // 调整内容区域的宽度
-    $("h1").css("margin-top", "0px");                            // 调整标题距离顶部的高度
+    let article = document.querySelector("article");
+    if (article) {
+      let prev = article.previousElementSibling;
+      if (prev && prev.tagName !== "H1") {
+        prev.remove();                              // 正文前面的作者信息
+      }
+      // 正文后的几个元素都不需要
+      for (let i = 0; i < 5; i++) {
+        if (article.nextElementSibling) {
+          article.nextElementSibling.remove();
+        }
+      }
+    }
+    let noteComment = document.getElementById("note-page-comment");
+    if (noteComment) {
+      if (noteComment.nextElementSibling) {
+        noteComment.nextElementSibling.remove();                     // 推荐阅读
+      }
+      noteComment.remove();                            // 评论区
+    }
+    document.querySelectorAll("section[aria-label=baidu-ad]").forEach(el => el.remove());                  // 百度广告
+    document.querySelectorAll("img[alt=reward]").forEach(el => {
+      if (el.parentNode && el.parentNode.parentNode) {
+        el.parentNode.parentNode.remove();             // 抽奖
+      }
+    });
+    let mainDiv = document.querySelector("div[role=main]");
+    if (mainDiv && mainDiv.children.length > 0) {
+      mainDiv.children[0].style.width = "800px";  // 调整内容区域的宽度
+    }
+    document.querySelectorAll("h1").forEach(el => el.style.marginTop = "0px");                            // 调整标题距离顶部的高度
   } else {
-    if ($("canvas").next().is("img")) {                          // APP广告和赞赏支持
-      $("canvas").parent().parent().remove();
+    let canvas = document.querySelector("canvas");
+    if (canvas && canvas.nextElementSibling && canvas.nextElementSibling.tagName === "IMG") {                          // APP广告和赞赏支持
+      if (canvas.parentNode && canvas.parentNode.parentNode) {
+        canvas.parentNode.parentNode.remove();
+      }
     }
-    $(".post").css("width", "800px");                            // 调整内容区的宽度
-    $("body").css("margin-top", "-90px");                        // 调整文章距离顶部的高度
+    document.querySelectorAll(".post").forEach(el => el.style.width = "800px");                            // 调整内容区的宽度
+    document.body.style.marginTop = "-90px";                        // 调整文章距离顶部的高度
   }
 }
 
@@ -331,8 +342,10 @@ function adjustStackoverflowQuestion() {
     "top-bar",         // 顶部栏
     "s-sidebarwidget", // 博客（The Overflow Blog）
   ])
-  // $(".container").css("margin-top", "-50px"); // 由于去掉了顶部栏，因此内容区要往上提
-  $("#content").css("width", $("#content").css("max-width")); // 调整宽度为最大宽度
+  let content = document.getElementById("content");
+  if (content) {
+    content.style.width = getComputedStyle(content).maxWidth; // 调整宽度为最大宽度
+  }
 }
 
 /** -------------------------- 调整stackoverflow问题页面 结束 -------------------------- */
@@ -392,24 +405,30 @@ function removeElementsByClassArrOfCsdnArticle() {
 
 /** 调整CSDN文章页面的宽度和目录 */
 function adjustWidthAndMenuOfCsdnArticle() {
-  let asideDirectory = $("#asidedirectory"); // 文章目录
+  let asideDirectory = document.getElementById("asidedirectory"); // 文章目录
   // 如果左侧有目录，则把main内容区域的宽度设置为80%；如果左侧没有目录，则把内容区的宽度设置为100%
-  if (asideDirectory && asideDirectory.length) {
-    if (!asideDirectory.attr("adjusted")) { // 通过"adjusted"属性来防止重复处理
-      asideDirectory.attr("adjusted", 1);   // 通过"adjusted"属性来防止重复处理
-      $("main").css("width", "80%");        // 由于有目录，所以把内容区域的宽度设置为80%，左侧的20%用于显示目录
+  if (asideDirectory) {
+    if (!asideDirectory.getAttribute("adjusted")) { // 通过"adjusted"属性来防止重复处理
+      asideDirectory.setAttribute("adjusted", "1");   // 通过"adjusted"属性来防止重复处理
+      document.querySelectorAll("main").forEach(el => el.style.width = "80%");        // 由于有目录，所以把内容区域的宽度设置为80%，左侧的20%用于显示目录
       // 通过修改样式来固定目录位置在左上角
-      $(".blog_container_aside").attr("style",
-        "position: fixed; top: 8px; z-index: 99; left: 5px; width: 300px; bottom: auto;");
-      // 以下代码是防止CSDN自己的一些额外处理（有时候会导致目录不显示）
-      let blogContainerAsideCopyOuterHtml = $(".blog_container_aside")
-        .prop("outerHTML").replace("blog_container_aside", "blog_container_aside_copy");
-      $(".blog_container_aside").replaceWith(blogContainerAsideCopyOuterHtml);
+      document.querySelectorAll(".blog_container_aside").forEach(el => {
+        el.style.position = "fixed";
+        el.style.top = "8px";
+        el.style.zIndex = "99";
+        el.style.left = "5px";
+        el.style.width = "300px";
+        el.style.bottom = "auto";
+
+        // 防止CSDN自己的一些额外处理（有时候会导致目录不显示）
+        let outerHTML = el.outerHTML.replace("blog_container_aside", "blog_container_aside_copy");
+        el.outerHTML = outerHTML;
+      });
     }
   } else { // 如果目录不存在，则内容区域的宽度设置为100%
-    $("main").css("width", "100%");
+    document.querySelectorAll("main").forEach(el => el.style.width = "100%");
   }
-  asideDirectory.show(); // 如果有目录就显示目录
+  if (asideDirectory) asideDirectory.style.display = "block"; // 如果有目录就显示目录
 }
 
 /** -------------------------- 调整csdn博客的文章页面 结束 -------------------------- */
@@ -447,7 +466,7 @@ function removeElementsByIdArr(arr) {
 /** 根据class删除元素 */
 function removeElementsByClassArr(arr) {
   for (let i = 0; i < arr.length; i++) {
-    $("." + arr[i]).remove();
+    document.querySelectorAll("." + arr[i]).forEach(el => el.remove());
   }
 }
 
@@ -462,7 +481,7 @@ function removeElementsByClassArr(arr) {
  *  */
 function removeElementsBySelectorArr(arr) {
   for (let i = 0; i < arr.length; i++) {
-    $(arr[i]).remove();
+    document.querySelectorAll(arr[i]).forEach(el => el.remove());
   }
 }
 

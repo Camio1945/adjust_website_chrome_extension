@@ -23,7 +23,6 @@
         "https://doc.hutool.cn/*"
       ],
       "js": [
-        "jquery-1.11.0.min.js",
         "adjust.js"
       ]
     }
