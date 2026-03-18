@@ -14,12 +14,18 @@ let interval = window.setInterval(function () {
   adjustCsdnArticle();           // 调整csdn博客的文章页面
   // adjustTsccMeituan();           // 美团闪购
   adjustYouTube();               // 调整 YouTube
+  adjustQuora();                 // 调整 Quora
   adjustDoubao(1000);            // 调整 豆包，每秒重复执行
   adjustYouDaoDict(1000);            // 调整 有道词典，每秒重复执行
 }, 250);
 
 /** 10秒以后停止间隔执行 */
-setTimeout(() => clearInterval(interval), 10 * 1000)
+setTimeout(clearDefaultInterval, 10 * 1000)
+
+/** 清除默认的间隔 */
+function clearDefaultInterval() {
+  clearInterval(interval)
+}
 
 /**
  * 统一处理调整逻辑
@@ -35,6 +41,38 @@ function handleAdjustment(name, intervalMs, logic) {
     setInterval(logic, intervalMs);
   } else {
     logic();
+  }
+}
+
+/** 调整 Quora */
+function adjustQuora(intervalMs) {
+  if (isHrefContainAllStrInArr(["https://www.quora.com/", "/answer/"])) {
+    handleAdjustment("adjustQuora", intervalMs, () => {
+      removeElementsBySelectorArr([
+        ".qu-zIndex--header", // 顶部导航
+        ".q-relative", // 相关问题
+        ".dom_annotate_answer_action_bar_upvote", // 点赞按钮
+        ".spacing_log_originally_answered_banner", // 初始回答横幅
+        ".spacing_log_answer_header", // 回答横幅
+      ])
+      const comment = getElementByFullText("div", "Comments");
+      const aboutTheAuthor = getElementByFullText("div", "About the Author")
+      const otherAnswers = getElementByPartialText("span", "other answers to this question");
+      const moreAnswers = getElementByFullText("a", "View more");
+      const otherLanguages = getElementByFullText("div", "In other languages");
+      if (comment && aboutTheAuthor && otherAnswers && moreAnswers && otherLanguages) {
+        clearDefaultInterval()
+        comment.parentNode.parentNode.parentNode.remove()
+        aboutTheAuthor.parentNode.remove()
+        otherAnswers.parentNode.parentNode.remove()
+        moreAnswers.parentNode.parentNode.parentNode.parentNode.parentNode.remove()
+        otherLanguages.parentNode.remove()
+      }
+      const statLine = document.getElementsByClassName("q-text qu-dynamicFontSize--small qu-pb--tiny qu-mt--small qu-color--gray_light qu-passColorToLinks");
+      if (statLine.length === 1) {
+        statLine[0].remove()
+      }
+    });
   }
 }
 
@@ -530,6 +568,18 @@ function isHrefContainAllStrInArr(arr) {
 /** 浏览器的href是否不包含数组 arr 中的任意一个字符串 */
 function isHrefNotContainAnyStrInArr(arr) {
   return !isHrefContainAnyStrInArr(arr);
+}
+
+/** 根据全部文本内容获取元素 */
+function getElementByFullText(tag, text) {
+  return Array.from(document.querySelectorAll(tag))
+    .find(el => el.textContent.trim() === text);
+}
+
+/** 根据部分文本内容获取元素 */
+function getElementByPartialText(tag, text) {
+  return Array.from(document.querySelectorAll(tag))
+    .find(el => el.textContent.trim().indexOf(text) > -1);
 }
 
 /**
