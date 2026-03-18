@@ -281,13 +281,18 @@ function adjustZhiHuAnswer(intervalMs) {
         ".Question-mainColumnLogin", // 登录横条
         ".QuestionHeader-tags",      // 标题上的标签
         ".QuestionHeader-side",      // 右边的关注者数和被浏览数
+        ".QuestionRichText",         // 标题下面的标签
         ".QuestionHeader-footer",    // 标题下面的一行按钮
         ".ContentItem-meta",         // 内容相关的信息，如作者信息
         ".ViewAll",                  // 查看全部回嗯答
         ".ContentItem-time",         // 编辑时间与地点
+        ".RichText-LinkCardContainer",// 文章内部的卡片
+        ".RichText-ADLinkCardContainer",// 文章内部的卡片
         ".ContentItem-actions",      // 文章下面的按钮
         ".MoreAnswers",              // 更多回答
+        ".Reward",                   // 送礼物
       ])
+      document.getElementsByClassName("Reward")[0].parentNode.style.display = "none"
       // 以下几行用于删除盐选答案
       document.querySelectorAll(".KfeCollection-OrdinaryLabel-content").forEach(el => {
         let card = el.closest("div[class='Card AnswerCard']");
