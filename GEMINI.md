@@ -31,7 +31,7 @@ The extension often deals with dynamic content that might not be available immed
 ### Utility Functions
 `adjust.js` contains several reusable utility functions:
 - `isHrefContainAnyStrInArr(arr)`: Checks if the current URL matches patterns.
-- `removeElementsBySelectorArr(arr)` / `removeElementsByClassArr(arr)`: Batch removal of DOM elements.
+- `removeElementsBySelectorArr(arr)`: Batch removal of DOM elements using CSS selectors.
 - `simulateTyping(input, text, options)`: Simulates human-like typing (async).
 
 ### Manifest V3 Migration Note

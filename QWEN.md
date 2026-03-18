@@ -100,7 +100,6 @@ function adjustYourSite() {
 |--------|------|
 | `isHrefContainAnyStrInArr(arr)` | 判断当前 URL 是否包含数组中的任意字符串 |
 | `isHrefNotContainAnyStrInArr(arr)` | 判断当前 URL 是否不包含数组中的任意字符串 |
-| `removeElementsByClassArr(arr)` | 根据 class 数组移除 DOM 元素 |
 | `removeElementsBySelectorArr(arr)` | 根据 CSS 选择器数组移除 DOM 元素 |
 | `simulateTyping(input, text, options)` | 模拟人类打字输入 |
 
@@ -114,7 +113,7 @@ function adjustYourSite() {
 ## 技术栈
 
 - **Manifest Version**: 3
-- **核心库**: jQuery 1.11.0
+- **核心库**: 原生 JavaScript
 - **语言**: JavaScript (ES5/ES6)
 - **权限**: `activeTab`
 

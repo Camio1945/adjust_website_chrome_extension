@@ -94,28 +94,36 @@ setTimeout(() => clearInterval(interval), 10 * 1000)
 function adjustCsdnArticle() {
   // 如果不是CSDN文章页面，则返回，不做处理
   if (isHrefNotContainAnyStrInArr(["blog.csdn.net", "article/details"])) {
-    return;
-  removeElementsOfCsdnArticleBySelector();    // 根据选择器数组，移除CSDN文章页面的元素
-  removeElementsByClassArrOfCsdnArticle(); // 根据class数组，移除CSDN文章页面的元素
-  adjustWidthAndMenuOfCsdnArticle();       // 调整CSDN文章页面的宽度和目录
-  });
-  }
+    handleAdjustment("adjustCsdnArticle", intervalMs, () => {
+      removeElementsOfCsdnArticleBySelector();    // 根据选择器数组，移除CSDN文章页面的元素
+      removeElementsByClassArrOfCsdnArticle(); // 根据选择器数组，移除CSDN文章页面的元素
+      adjustWidthAndMenuOfCsdnArticle();       // 调整CSDN文章页面的宽度和目录
+    });
+    }
 
-  /** 根据选择器数组，移除CSDN文章页面的元素 */
-  function removeElementsOfCsdnArticleBySelector() {
-  removeElementsBySelectorArr([
-  "#csdn-toolbar",        // 顶部 - 工具条
-    "asideProfile",       // 左侧 - 作者信息
-    "asideSearchArticle", // 左侧 - 搜索博主文章
-    "asideHotArticle",    // 左侧 - 热门文章
-    "asideCategory",      // 左侧 - 分类专栏
-    "asideNewComments",   // 左侧 - 最新评论
-    "asideNewNps",        // 左侧 - 您愿意向朋友推荐“博客详情页”吗
-    "asideArchive",       // 左侧 - 最新文章
-    "footerRightAds",     // 广告
-    "toolBarBox",         // 文章后面 - 工具栏（赞、踩、分享等）
-  ]);
-}
+    /** 根据选择器数组，移除CSDN文章页面的元素 */
+    function removeElementsOfCsdnArticleBySelector() {
+    removeElementsBySelectorArr([
+      "#csdn-toolbar",        // 顶部 - 工具条
+      "#asideProfile",       // 左侧 - 作者信息
+      "#asideSearchArticle", // 左侧 - 搜索博主文章
+      "#asideHotArticle",    // 左侧 - 热门文章
+      "#asideCategory",      // 左侧 - 分类专栏
+      "#asideNewComments",   // 左侧 - 最新评论
+      "#asideNewNps",        // 左侧 - 您愿意向朋友推荐“博客详情页”吗
+      "#asideArchive",       // 左侧 - 最新文章
+      "#footerRightAds",     // 广告
+      "#toolBarBox",         // 文章后面 - 工具栏（赞、踩、分享等）
+    ]);
+    }
+
+    /** 根据选择器数组，移除CSDN文章页面的元素 */
+    function removeElementsByClassArrOfCsdnArticle() {
+    removeElementsBySelectorArr([
+      ".article-info-box",         // 文章标题与正文中间的作者、时间等信息
+      ".column-group",             // 文章标题与正文中间的专栏信息
+    ]);
+    }
 
 /** 注：以下省略了后续的代码 */
 ```

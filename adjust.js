@@ -67,7 +67,7 @@ function adjustHutool(intervalMs) {
     handleAdjustment("adjustHutool", intervalMs, () => {
       let element = document.querySelector(".page-slot-top");
       if (element) {
-        removeElementsByClassArr(["page-slot-top", "custom-html-window-lb", "sidebar-slot-top"])
+        removeElementsBySelectorArr([".page-slot-top", ".custom-html-window-lb", ".sidebar-slot-top"])
         let sidebar = document.querySelector(".sidebar-links");
         if (sidebar) sidebar.style.setProperty("margin-top", "-10px", "important");
       }
@@ -132,8 +132,10 @@ function adjustLanguageReactor(intervalMs) {
 function adjustYouTube(intervalMs) {
   if (isHrefContainAnyStrInArr(["https://www.youtube.com/"])) {
     handleAdjustment("adjustYouTube", intervalMs, () => {
-      removeElementsBySelectorArr(["#secondary"])
-      removeElementsByClassArr(["html5-endscreen"])
+      removeElementsBySelectorArr([
+        "#secondary",
+        ".html5-endscreen"
+      ])
     });
   }
 }
@@ -187,11 +189,9 @@ function adjustProcesson(intervalMs) {
   if (isHrefContainAnyStrInArr(["https://www.processon.com/"])) {
     handleAdjustment("adjustProcesson", intervalMs, () => {
       removeElementsBySelectorArr([
-        "#banner_2",  // 首页 - 顶部 - 达人招募计划
-      ])
-      removeElementsByClassArr([
-        "app-down",  // 首页 - 右下角 - 下载移动版
-        "activity-con", // 文件列表页 -右上角 - 活动信息
+        "#banner_2",     // 首页 - 顶部 - 达人招募计划
+        ".app-down",     // 首页 - 右下角 - 下载移动版
+        ".activity-con", // 文件列表页 -右上角 - 活动信息
       ])
     });
   }
@@ -211,9 +211,7 @@ function adjustCoolshell(intervalMs) {
         "#custom_html-8",             // 友情链接
         "#meta-5",                    // 功能
         "#custom_html-6",             // CNZZ
-      ])
-      removeElementsByClassArr([
-        "avatar"                     // 头像（一般都加载不出来）
+        ".avatar"                     // 头像（一般都加载不出来）
       ])
       // 删除404链接
       document.querySelectorAll("a[href='https://coolshell.cn/404/']").forEach(el => {
@@ -254,8 +252,8 @@ function adjustCnblogsArticle(intervalMs) {
         "#comment_form",              // 评论
         "#blog-comments-placeholder", // 评论
         "#footer",                    // 底部
+        ".charm-bar-wrapper"          // 会员力量
       ])
-      removeElementsByClassArr(["charm-bar-wrapper"]) // 会员力量
     });
   }
 }
@@ -338,15 +336,13 @@ function adjustJianShuArticle(intervalMs) {
         "#free-reward-panel",       // 赞赏
         "#note-ad",                 // APP广告
         "#comment-list",            // 评论区
-      ])
-      removeElementsByClassArr([
-        "navbar-fixed-top",        // 顶部栏
-        "author",                  // 作者信息
-        "follow-detail",           // 作者信息
-        "show-foot",               // 版权
-        "meta-bottom",             // 分享区域
-        "note-bottom",             // 推荐阅读
-        "side-tool",               // 右侧工具
+        ".navbar-fixed-top",        // 顶部栏
+        ".author",                  // 作者信息
+        ".follow-detail",           // 作者信息
+        ".show-foot",               // 版权
+        ".meta-bottom",             // 分享区域
+        ".note-bottom",             // 推荐阅读
+        ".side-tool",               // 右侧工具
       ])
     });
     specialHandleOfJianShuArticle(intervalMs);
@@ -419,12 +415,10 @@ function adjustStackoverflowQuestion(intervalMs) {
   }
   handleAdjustment("adjustStackoverflowQuestion", intervalMs, () => {
     removeElementsBySelectorArr([
-      "#left-sidebar", // 左侧栏
-      "#footer",       // 底部区
-    ])
-    removeElementsByClassArr([
-      "top-bar",         // 顶部栏
-      "s-sidebarwidget", // 博客（The Overflow Blog）
+      "#left-sidebar",   // 左侧栏
+      "#footer",         // 底部区
+      ".top-bar",         // 顶部栏
+      ".s-sidebarwidget", // 博客（The Overflow Blog）
     ])
     let content = document.getElementById("content");
     if (content) {
@@ -442,52 +436,39 @@ function adjustCsdnArticle(intervalMs) {
     return;
   }
   handleAdjustment("adjustCsdnArticle", intervalMs, () => {
-    removeElementsOfCsdnArticleBySelector();    // 根据选择器数组，移除CSDN文章页面的元素
-    removeElementsByClassArrOfCsdnArticle(); // 根据class数组，移除CSDN文章页面的元素
+    removeElementsBySelectorArr([
+      "#csdn-toolbar",        // 顶部 - 工具条
+      "#asideCustom",         // 左侧 - 定制边栏信息
+      "#asideProfile",        // 左侧 - 作者信息
+      "#asideSearchArticle",  // 左侧 - 搜索博主文章
+      "#asideHotArticle",     // 左侧 - 热门文章
+      "#asideCategory",       // 左侧 - 分类专栏
+      "#asideNewComments",    // 左侧 - 最新评论
+      "#asideNewNps",         // 左侧 - 您愿意向朋友推荐“博客详情页”吗
+      "#asideArchive",        // 左侧 - 最新文章
+      "#asideTopicStar",      // 左侧 - 博客之星
+      "#footerRightAds",      // 广告
+      "#blogColumnPayAdvert", // 标题下面 - 广告（如：C语言练习题资源合集：海量资源免费下载）
+      "#toolBarBox",          // 文章后面 - 工具栏（赞、踩、分享等）
+      "#treeSkill",           // 文章后面 - 进一步学习相关知识
+      "#recommendNps",        // 文章后面 - “相关推荐”对你有帮助么？
+      "#blogExtensionBox",    // 文章后面 - 自定义的广告
+      ".article-info-box",         // 文章标题与正文中间的作者、时间等信息
+      ".column-group",             // 文章标题与正文中间的专栏信息
+      ".comment-box",              // 文章后面 - 评论
+      ".recommend-box",            // 文章后面 - 相关推荐信息
+      ".template-box",             // 文章后面 - 年份、皮肤主题、返回首页
+      ".blog-footer-bottom",       // 文章后面 - 备案信息、关于我们等底部信息
+      ".csdn-side-toolbar",        // 右侧 - 工具栏，抽奖、新手引导、客服、举报等
+      ".leftPop",                  // 浏览器缩放的提醒
+      ".passport-login-container", // 登录弹窗（注：可能无效，因为本插件只会在前10秒进行处理，此时可能没有登录弹窗）
+      ".csdn-highschool-select",   // 学生认证弹窗
+      ".csdn-highschool-window",   // 学生认证弹窗
+      ".adblock",                  // 对于adblock等谷歌插件的提醒
+      ".blog_container_aside",     // 博客之星
+    ])
     adjustWidthAndMenuOfCsdnArticle();       // 调整CSDN文章页面的宽度和目录
   });
-}
-
-/** 根据选择器数组，移除CSDN文章页面的元素 */
-function removeElementsOfCsdnArticleBySelector() {
-  removeElementsBySelectorArr([
-    "#csdn-toolbar",        // 顶部 - 工具条
-    "#asideCustom",         // 左侧 - 定制边栏信息
-    "#asideProfile",        // 左侧 - 作者信息
-    "#asideSearchArticle",  // 左侧 - 搜索博主文章
-    "#asideHotArticle",     // 左侧 - 热门文章
-    "#asideCategory",       // 左侧 - 分类专栏
-    "#asideNewComments",    // 左侧 - 最新评论
-    "#asideNewNps",         // 左侧 - 您愿意向朋友推荐“博客详情页”吗
-    "#asideArchive",        // 左侧 - 最新文章
-    "#asideTopicStar",      // 左侧 - 博客之星
-    "#footerRightAds",      // 广告
-    "#blogColumnPayAdvert", // 标题下面 - 广告（如：C语言练习题资源合集：海量资源免费下载）
-    "#toolBarBox",          // 文章后面 - 工具栏（赞、踩、分享等）
-    "#treeSkill",           // 文章后面 - 进一步学习相关知识
-    "#recommendNps",        // 文章后面 - “相关推荐”对你有帮助么？
-    "#blogExtensionBox",    // 文章后面 - 自定义的广告
-  ]);
-}
-
-/** 根据class数组，移除CSDN文章页面的元素 */
-function removeElementsByClassArrOfCsdnArticle() {
-  removeElementsByClassArr([
-    "article-info-box",         // 文章标题与正文中间的作者、时间等信息
-    "column-group",             // 文章标题与正文中间的专栏信息
-    "comment-box",              // 文章后面 - 评论
-    "recommend-box",            // 文章后面 - 相关推荐信息
-    "template-box",             // 文章后面 - 年份、皮肤主题、返回首页
-    "blog-footer-bottom",       // 文章后面 - 备案信息、关于我们等底部信息
-    "csdn-side-toolbar",        // 右侧 - 工具栏，抽奖、新手引导、客服、举报等
-    "leftPop",                  // 浏览器缩放的提醒
-    "passport-login-container", // 登录弹窗（注：可能无效，因为本插件只会在前10秒进行处理，此时可能没有登录弹窗）
-    "csdn-highschool-select",   // 学生认证弹窗
-    "csdn-highschool-window",   // 学生认证弹窗
-    "adblock",                  // 对于adblock等谷歌插件的提醒
-    "blog_container_aside",     // 博客之星
-
-  ]);
 }
 
 /** 调整CSDN文章页面的宽度和目录 */
@@ -549,13 +530,6 @@ function isHrefContainAllStrInArr(arr) {
 /** 浏览器的href是否不包含数组 arr 中的任意一个字符串 */
 function isHrefNotContainAnyStrInArr(arr) {
   return !isHrefContainAnyStrInArr(arr);
-}
-
-/** 根据class删除元素 */
-function removeElementsByClassArr(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    document.querySelectorAll("." + arr[i]).forEach(el => el.remove());
-  }
 }
 
 /**
