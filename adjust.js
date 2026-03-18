@@ -15,6 +15,7 @@ let interval = window.setInterval(function () {
   // adjustTsccMeituan();           // 美团闪购
   adjustYouTube();               // 调整 YouTube
   adjustDoubao(1000);            // 调整 豆包，每秒重复执行
+  adjustYouDaoDict(1000);            // 调整 有道词典，每秒重复执行
 }, 250);
 
 /** 10秒以后停止间隔执行 */
@@ -42,6 +43,20 @@ function adjustDoubao(intervalMs) {
   if (isHrefContainAnyStrInArr(["https://www.doubao.com/chat/"])) {
     handleAdjustment("adjustDoubao", intervalMs, () => {
       removeElementsByIdArr(["experiment-guidance-suggestions"])
+    });
+  }
+}
+
+/** 调整 有道词典 */
+function adjustYouDaoDict(intervalMs) {
+  if (isHrefContainAnyStrInArr(["https://dict.youdao.com/"])) {
+    handleAdjustment("adjustYouDaoDict", intervalMs, () => {
+      removeElementsBySelectorArr([
+        ".top-banner-wrap",  // 顶部的广告
+        ".top_nav-con",      // 顶部的导航
+        ".footer_container", // 底部的公司信息
+        ".user-feed_back",   // 用户反馈
+      ])
     });
   }
 }
@@ -283,6 +298,8 @@ function adjustZhiHuAnswer(intervalMs) {
         ".QuestionHeader-side",      // 右边的关注者数和被浏览数
         ".QuestionRichText",         // 标题下面的标签
         ".QuestionHeader-footer",    // 标题下面的一行按钮
+        ".QuestionStatus-notification-inner",    // 标题下面的邀请行
+        ".LabelContainer-wrapper",   // 圆桌收录
         ".ContentItem-meta",         // 内容相关的信息，如作者信息
         ".ViewAll",                  // 查看全部回嗯答
         ".ContentItem-time",         // 编辑时间与地点
@@ -293,6 +310,7 @@ function adjustZhiHuAnswer(intervalMs) {
         ".Reward",                   // 送礼物
       ])
       document.getElementsByClassName("Reward")[0].parentNode.style.display = "none"
+      document.getElementsByClassName(".QuestionStatus-notification-inner")[0].parentNode.parentNode.parentNode.style.display = "none"
       // 以下几行用于删除盐选答案
       document.querySelectorAll(".KfeCollection-OrdinaryLabel-content").forEach(el => {
         let card = el.closest("div[class='Card AnswerCard']");

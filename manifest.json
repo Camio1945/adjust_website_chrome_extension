@@ -21,7 +21,8 @@
         "https://www.youtube.com/*",
         "https://www.languagereactor.com/*",
         "https://doc.hutool.cn/*",
-        "https://www.doubao.com/*"
+        "https://www.doubao.com/*",
+        "https://dict.youdao.com/*"
       ],
       "js": [
         "adjust.js"
