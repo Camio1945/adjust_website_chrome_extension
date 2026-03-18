@@ -274,7 +274,7 @@ function adjustZhiHu(intervalMs) {
 /** 调整知乎答案页面 */
 function adjustZhiHuAnswer(intervalMs) {
   // 如果是知乎答案页面，才处理
-  if (isHrefContainAnyStrInArr(["https://www.zhihu.com/question"])) {
+  if (isHrefContainAllStrInArr(["https://www.zhihu.com/question", "/answer/"])) {
     handleAdjustment("adjustZhiHuAnswer", intervalMs, () => {
       removeElementsBySelectorArr([
         "header",                    // 顶部条
@@ -502,6 +502,17 @@ function isHrefContainAnyStrInArr(arr) {
     }
   }
   return flag;
+}
+
+/** 浏览器的href是否包含数组 arr 中的所有字符串 */
+function isHrefContainAllStrInArr(arr) {
+  let href = window.location.href;
+  for (let i = 0; i < arr.length; i++) {
+    if (href.indexOf(arr[i]) === -1) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /** 浏览器的href是否不包含数组 arr 中的任意一个字符串 */
