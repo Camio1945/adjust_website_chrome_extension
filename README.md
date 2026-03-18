@@ -95,16 +95,16 @@ function adjustCsdnArticle() {
   // 如果不是CSDN文章页面，则返回，不做处理
   if (isHrefNotContainAnyStrInArr(["blog.csdn.net", "article/details"])) {
     return;
-  }
-  removeElementsByIdArrOfCsdnArticle();    // 根据ID数组，移除CSDN文章页面的元素
+  removeElementsOfCsdnArticleBySelector();    // 根据选择器数组，移除CSDN文章页面的元素
   removeElementsByClassArrOfCsdnArticle(); // 根据class数组，移除CSDN文章页面的元素
   adjustWidthAndMenuOfCsdnArticle();       // 调整CSDN文章页面的宽度和目录
-}
+  });
+  }
 
-/** 根据ID数组，移除CSDN文章页面的元素 */
-function removeElementsByIdArrOfCsdnArticle() {
-  removeElementsByIdArr([
-    "csdn-toolbar",       // 顶部 - 工具条
+  /** 根据选择器数组，移除CSDN文章页面的元素 */
+  function removeElementsOfCsdnArticleBySelector() {
+  removeElementsBySelectorArr([
+  "#csdn-toolbar",        // 顶部 - 工具条
     "asideProfile",       // 左侧 - 作者信息
     "asideSearchArticle", // 左侧 - 搜索博主文章
     "asideHotArticle",    // 左侧 - 热门文章

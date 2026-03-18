@@ -100,18 +100,16 @@ function adjustYourSite() {
 |--------|------|
 | `isHrefContainAnyStrInArr(arr)` | 判断当前 URL 是否包含数组中的任意字符串 |
 | `isHrefNotContainAnyStrInArr(arr)` | 判断当前 URL 是否不包含数组中的任意字符串 |
-| `removeElementsByIdArr(arr)` | 根据 ID 数组移除 DOM 元素 |
 | `removeElementsByClassArr(arr)` | 根据 class 数组移除 DOM 元素 |
 | `removeElementsBySelectorArr(arr)` | 根据 CSS 选择器数组移除 DOM 元素 |
 | `simulateTyping(input, text, options)` | 模拟人类打字输入 |
-| `getParam(name, url)` | 从 URL 获取查询参数 |
 
 ### 开发约定
 
-- **代码风格**: 使用 JavaScript 原生语法，配合 jQuery 进行 DOM 操作
+- **代码风格**: 使用 JavaScript 原生语法。
 - **注释**: 函数和关键逻辑需添加中文注释
 - **定时任务**: 使用 `setInterval` 定时执行，并通过 `setTimeout` 在 10 秒后停止，避免长时间占用资源
-- **元素移除**: 优先使用 ID 移除，其次使用 class 或选择器
+- **元素移除**: 优先使用选择器移除。
 
 ## 技术栈
 

@@ -42,7 +42,7 @@ function handleAdjustment(name, intervalMs, logic) {
 function adjustDoubao(intervalMs) {
   if (isHrefContainAnyStrInArr(["https://www.doubao.com/chat/"])) {
     handleAdjustment("adjustDoubao", intervalMs, () => {
-      removeElementsByIdArr(["experiment-guidance-suggestions"])
+      removeElementsBySelectorArr(["#experiment-guidance-suggestions"])
     });
   }
 }
@@ -132,7 +132,7 @@ function adjustLanguageReactor(intervalMs) {
 function adjustYouTube(intervalMs) {
   if (isHrefContainAnyStrInArr(["https://www.youtube.com/"])) {
     handleAdjustment("adjustYouTube", intervalMs, () => {
-      removeElementsByIdArr(["secondary"])
+      removeElementsBySelectorArr(["#secondary"])
       removeElementsByClassArr(["html5-endscreen"])
     });
   }
@@ -186,8 +186,8 @@ function adjustProcesson(intervalMs) {
   // 如果是processon页面，才处理
   if (isHrefContainAnyStrInArr(["https://www.processon.com/"])) {
     handleAdjustment("adjustProcesson", intervalMs, () => {
-      removeElementsByIdArr([
-        "banner_2",  // 首页 - 顶部 - 达人招募计划
+      removeElementsBySelectorArr([
+        "#banner_2",  // 首页 - 顶部 - 达人招募计划
       ])
       removeElementsByClassArr([
         "app-down",  // 首页 - 右下角 - 下载移动版
@@ -204,13 +204,13 @@ function adjustCoolshell(intervalMs) {
   // 如果是酷壳页面，才处理
   if (isHrefContainAnyStrInArr(["https://coolshell.cn/"])) {
     handleAdjustment("adjustCoolshell", intervalMs, () => {
-      removeElementsByIdArr([
-        "masthead",                  // 头部
-        "colophon",                  // 尾部
-        "custom_html-3",             // 本站公告
-        "custom_html-8",             // 友情链接
-        "meta-5",                    // 功能
-        "custom_html-6",             // CNZZ
+      removeElementsBySelectorArr([
+        "#masthead",                  // 头部
+        "#colophon",                  // 尾部
+        "#custom_html-3",             // 本站公告
+        "#custom_html-8",             // 友情链接
+        "#meta-5",                    // 功能
+        "#custom_html-6",             // CNZZ
       ])
       removeElementsByClassArr([
         "avatar"                     // 头像（一般都加载不出来）
@@ -243,17 +243,17 @@ function adjustCnblogsArticle(intervalMs) {
   // 如果是cnblogs文章详情页面，才处理
   if (isHrefContainAnyStrInArr(["https://www.cnblogs.com/"]) && isHrefContainAnyStrInArr(["/p/"])) {
     handleAdjustment("adjustCnblogsArticle", intervalMs, () => {
-      removeElementsByIdArr([
-        "top_nav",                   // 头部
-        "header",                    // 头部
-        "githubRibbon",              // Fork on GitHub
-        "sideBar",                   // 右边栏
-        "navigator",                 // 导航
-        "MySignature",               // 作者签名
-        "blog_post_info_block",      // 文章信息
-        "comment_form",              // 评论
-        "blog-comments-placeholder", // 评论
-        "footer",                    // 底部
+      removeElementsBySelectorArr([
+        "#top_nav",                   // 头部
+        "#header",                    // 头部
+        "#githubRibbon",              // Fork on GitHub
+        "#sideBar",                   // 右边栏
+        "#navigator",                 // 导航
+        "#MySignature",               // 作者签名
+        "#blog_post_info_block",      // 文章信息
+        "#comment_form",              // 评论
+        "#blog-comments-placeholder", // 评论
+        "#footer",                    // 底部
       ])
       removeElementsByClassArr(["charm-bar-wrapper"]) // 会员力量
     });
@@ -333,11 +333,11 @@ function adjustJianShuArticle(intervalMs) {
   // 如果是简书文章详情页面，才处理
   if (isHrefContainAnyStrInArr(["https://www.jianshu.com/p/"])) {
     handleAdjustment("adjustJianShuArticle", intervalMs, () => {
-      removeElementsByIdArr([
-        "note-fixed-ad-container", // 广告：你也可以写文赚赞赏
-        "free-reward-panel",       // 赞赏
-        "note-ad",                 // APP广告
-        "comment-list",            // 评论区
+      removeElementsBySelectorArr([
+        "#note-fixed-ad-container", // 广告：你也可以写文赚赞赏
+        "#free-reward-panel",       // 赞赏
+        "#note-ad",                 // APP广告
+        "#comment-list",            // 评论区
       ])
       removeElementsByClassArr([
         "navbar-fixed-top",        // 顶部栏
@@ -411,16 +411,16 @@ function specialHandleOfJianShuArticle(intervalMs) {
 
 /** -------------------------- 调整简书文章详情页面 结束 -------------------------- */
 
-/** -------------------------- 调整stackoverflow问题页面 开始 -------------------------- */
+/** -------------------------- 调整stackoverflow problem页面 开始 -------------------------- */
 function adjustStackoverflowQuestion(intervalMs) {
   // 如果不是stackoverflow问题页面页面，则返回，不做处理
   if (isHrefNotContainAnyStrInArr(["stackoverflow.com/questions"])) {
     return;
   }
   handleAdjustment("adjustStackoverflowQuestion", intervalMs, () => {
-    removeElementsByIdArr([
-      "left-sidebar", // 左侧栏
-      "footer",       // 底部区
+    removeElementsBySelectorArr([
+      "#left-sidebar", // 左侧栏
+      "#footer",       // 底部区
     ])
     removeElementsByClassArr([
       "top-bar",         // 顶部栏
@@ -442,31 +442,31 @@ function adjustCsdnArticle(intervalMs) {
     return;
   }
   handleAdjustment("adjustCsdnArticle", intervalMs, () => {
-    removeElementsByIdArrOfCsdnArticle();    // 根据ID数组，移除CSDN文章页面的元素
+    removeElementsOfCsdnArticleBySelector();    // 根据选择器数组，移除CSDN文章页面的元素
     removeElementsByClassArrOfCsdnArticle(); // 根据class数组，移除CSDN文章页面的元素
     adjustWidthAndMenuOfCsdnArticle();       // 调整CSDN文章页面的宽度和目录
   });
 }
 
-/** 根据ID数组，移除CSDN文章页面的元素 */
-function removeElementsByIdArrOfCsdnArticle() {
-  removeElementsByIdArr([
-    "csdn-toolbar",        // 顶部 - 工具条
-    "asideCustom",         // 左侧 - 定制边栏信息
-    "asideProfile",        // 左侧 - 作者信息
-    "asideSearchArticle",  // 左侧 - 搜索博主文章
-    "asideHotArticle",     // 左侧 - 热门文章
-    "asideCategory",       // 左侧 - 分类专栏
-    "asideNewComments",    // 左侧 - 最新评论
-    "asideNewNps",         // 左侧 - 您愿意向朋友推荐“博客详情页”吗
-    "asideArchive",        // 左侧 - 最新文章
-    "asideTopicStar",      // 左侧 - 博客之星
-    "footerRightAds",      // 广告
-    "blogColumnPayAdvert", // 标题下面 - 广告（如：C语言练习题资源合集：海量资源免费下载）
-    "toolBarBox",          // 文章后面 - 工具栏（赞、踩、分享等）
-    "treeSkill",           // 文章后面 - 进一步学习相关知识
-    "recommendNps",        // 文章后面 - “相关推荐”对你有帮助么？
-    "blogExtensionBox",    // 文章后面 - 自定义的广告
+/** 根据选择器数组，移除CSDN文章页面的元素 */
+function removeElementsOfCsdnArticleBySelector() {
+  removeElementsBySelectorArr([
+    "#csdn-toolbar",        // 顶部 - 工具条
+    "#asideCustom",         // 左侧 - 定制边栏信息
+    "#asideProfile",        // 左侧 - 作者信息
+    "#asideSearchArticle",  // 左侧 - 搜索博主文章
+    "#asideHotArticle",     // 左侧 - 热门文章
+    "#asideCategory",       // 左侧 - 分类专栏
+    "#asideNewComments",    // 左侧 - 最新评论
+    "#asideNewNps",         // 左侧 - 您愿意向朋友推荐“博客详情页”吗
+    "#asideArchive",        // 左侧 - 最新文章
+    "#asideTopicStar",      // 左侧 - 博客之星
+    "#footerRightAds",      // 广告
+    "#blogColumnPayAdvert", // 标题下面 - 广告（如：C语言练习题资源合集：海量资源免费下载）
+    "#toolBarBox",          // 文章后面 - 工具栏（赞、踩、分享等）
+    "#treeSkill",           // 文章后面 - 进一步学习相关知识
+    "#recommendNps",        // 文章后面 - “相关推荐”对你有帮助么？
+    "#blogExtensionBox",    // 文章后面 - 自定义的广告
   ]);
 }
 
@@ -549,16 +549,6 @@ function isHrefContainAllStrInArr(arr) {
 /** 浏览器的href是否不包含数组 arr 中的任意一个字符串 */
 function isHrefNotContainAnyStrInArr(arr) {
   return !isHrefContainAnyStrInArr(arr);
-}
-
-/** 根据id删除元素 */
-function removeElementsByIdArr(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let element = document.getElementById(arr[i]);
-    if (element != null) {
-      element.remove();
-    }
-  }
 }
 
 /** 根据class删除元素 */
