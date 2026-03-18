@@ -276,9 +276,17 @@ function adjustZhiHuAnswer(intervalMs) {
   // 如果是知乎答案页面，才处理
   if (isHrefContainAllStrInArr(["https://www.zhihu.com/question", "/answer/"])) {
     handleAdjustment("adjustZhiHuAnswer", intervalMs, () => {
-      removeElementsBySelectorArr([
+      hideElementsBySelectorArr([
         "header",                    // 顶部条
         ".Question-mainColumnLogin", // 登录横条
+        ".QuestionHeader-tags",      // 标题上的标签
+        ".QuestionHeader-side",      // 右边的关注者数和被浏览数
+        ".QuestionHeader-footer",    // 标题下面的一行按钮
+        ".ContentItem-meta",         // 内容相关的信息，如作者信息
+        ".ViewAll",                  // 查看全部回嗯答
+        ".ContentItem-time",         // 编辑时间与地点
+        ".ContentItem-actions",      // 文章下面的按钮
+        ".MoreAnswers",              // 更多回答
       ])
       // 以下几行用于删除盐选答案
       document.querySelectorAll(".KfeCollection-OrdinaryLabel-content").forEach(el => {
@@ -549,6 +557,13 @@ function removeElementsByClassArr(arr) {
 function removeElementsBySelectorArr(arr) {
   for (let i = 0; i < arr.length; i++) {
     document.querySelectorAll(arr[i]).forEach(el => el.remove());
+  }
+}
+
+/** 根据选择器来隐藏元素 */
+function hideElementsBySelectorArr(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    document.querySelectorAll(arr[i]).forEach(el => el.style.display = "none");
   }
 }
 
