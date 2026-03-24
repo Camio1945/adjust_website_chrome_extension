@@ -80,7 +80,11 @@ function adjustQuora(intervalMs) {
 function adjustDoubao(intervalMs) {
   if (isHrefContainAnyStrInArr(["https://www.doubao.com/chat/"])) {
     handleAdjustment("adjustDoubao", intervalMs, () => {
-      removeElementsBySelectorArr(["#experiment-guidance-suggestions"])
+      removeElementsBySelectorArr([
+        '#experiment-guidance-suggestions',
+        'div[data-testid="onboarding_sug_item"]',
+        'div[data-foundation-type="receive-message-suggest-foundation"]'
+      ])
     });
   }
 }
