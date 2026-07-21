@@ -17,7 +17,7 @@ let interval = window.setInterval(function () {
   adjustQuora();                 // 调整 Quora
   adjustDoubao(1000);            // 调整 豆包，每秒重复执行
   adjustYouDaoDict(1000);            // 调整 有道词典，每秒重复执行
-  adjustJdOpenApi();              // 调整 京东开放平台API文档
+  adjustJdOpenApi(1000);          // 调整 京东开放平台API文档，每秒重复执行
 }, 250);
 
 /** 10秒以后停止间隔执行 */
@@ -551,30 +551,39 @@ function adjustJdOpenApi(intervalMs) {
   if (isHrefContainAllStrInArr(["https://open.jd.com/", "#/doc/api"])) {
     handleAdjustment("adjustJdOpenApi", intervalMs, () => {
       const evalTitle = document.querySelector(".doc-evaluation-title");
-      if (evalTitle && !evalTitle.dataset.adjusted) {
-        evalTitle.dataset.adjusted = "1";
-        evalTitle.textContent = "下载文档";
-        evalTitle.style.cursor = "pointer";
-        evalTitle.addEventListener("click", () => {
-          const articleContent = document.querySelector(".article-content");
-          if (!articleContent) return;
-          const titleEl = document.querySelector(".api-overview-title");
-          let title = "文档";
-          if (titleEl) {
-            title = titleEl.textContent.trim();
-          }
-          const content = articleContent.outerHTML;
-          const blob = new Blob([content], { type: "text/plain;charset=UTF-8" });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = title + ".txt";
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        });
-      }
+      if (!evalTitle) return;
+      // 通过 location.hash 检测 SPA 页面切换，hash 变化时重新设置按钮
+      const currentHash = window.location.hash;
+      if (evalTitle.dataset.lastDocHash === currentHash) return;
+      evalTitle.dataset.lastDocHash = currentHash;
+      evalTitle.textContent = "下载文档";
+      evalTitle.style.cursor = "pointer";
+      // 克隆节点替换以移除旧的 click 事件监听器
+      const newBtn = evalTitle.cloneNode(true);
+      evalTitle.parentNode.replaceChild(newBtn, evalTitle);
+      newBtn.addEventListener("click", () => {
+        const articleContent = document.querySelector(".article-content");
+        if (!articleContent) return;
+        // 分类概览页（如"秒送商品概览"）：使用 .api-overview-title
+        // 具体 API 文档页：document.title 格式为 "API名称｜京东商家开放平台"，取 "｜" 前面的部分
+        let title = "文档";
+        const overviewTitle = document.querySelector(".api-overview-title");
+        if (overviewTitle && overviewTitle.textContent.trim()) {
+          title = overviewTitle.textContent.trim();
+        } else if (document.title && document.title.includes("｜")) {
+          title = document.title.split("｜")[0].trim();
+        }
+        const content = articleContent.outerHTML;
+        const blob = new Blob(["\uFEFF" + content], { type: "text/plain;charset=UTF-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = title + ".txt";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
     });
   }
 }

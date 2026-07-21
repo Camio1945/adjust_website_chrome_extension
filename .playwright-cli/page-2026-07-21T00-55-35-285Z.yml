@@ -1,0 +1,30 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e9]:
+      - generic [ref=e15]:
+        - separator [ref=e18]
+        - textbox "请输入文档关键词/开发问题/request_id/错误码" [ref=e19]
+      - generic [ref=e20]:
+        - generic [ref=e21] [cursor=pointer]: 开发者后台
+        - generic [ref=e22] [cursor=pointer]: 登录
+    - generic [ref=e23]: 我的文档
+  - generic [ref=e32]:
+    - complementary [ref=e33]:
+      - generic [ref=e36]:
+        - button "POP" [ref=e37] [cursor=pointer]
+        - button "自营" [ref=e39] [cursor=pointer]
+        - button "秒送" [ref=e41] [cursor=pointer]
+        - button "酒旅" [disabled] [ref=e43]
+        - button "政企" [ref=e45] [cursor=pointer]
+        - button "其他" [ref=e47] [cursor=pointer]
+      - generic [ref=e49]:
+        - generic:
+          - menubar
+        - textbox "在目录中筛选" [ref=e57]
+    - main [ref=e58]:
+      - navigation "Breadcrumb" [ref=e60]:
+        - link "API文档" [ref=e62]
+      - generic [ref=e63]:
+        - complementary
+  - button "关闭提示文本" [ref=e68] [cursor=pointer]:
+    - generic [ref=e72]: 👋遇到问题？让我来为你解答！

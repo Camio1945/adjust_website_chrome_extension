@@ -1,0 +1,15 @@
+[     757ms] [INFO] You are running a development build of Vue.
+Make sure to use the production build (*.prod.js) when deploying for production. @ https://unpkg.shop.jd.com/vue@3.5.18/dist/vue.global.js:12396
+[    1025ms] [WARNING] [Vue warn]: inject() can only be used inside setup() or functional components. @ https://unpkg.shop.jd.com/vue@3.5.18/dist/vue.global.js:2295
+[    1058ms] [WARNING] [Vue warn]: A plugin must either be a function or an object with an "install" function. @ https://unpkg.shop.jd.com/vue@3.5.18/dist/vue.global.js:2295
+[    1084ms] [WARNING] [Vue warn]: Extraneous non-props attributes (update:visible) were passed to component but could not be automatically inherited because component renders fragment or text or teleport root nodes. 
+  at <Index visible=true update:visible=true loginPin=""  ... > 
+  at <AiChatBubble key=2 initialWidth=520 initialHeight=1300  ... > 
+  at <SpmPage spmb=undefined onSpmReady=fn<E> > 
+  at <App> @ https://unpkg.shop.jd.com/vue@3.5.18/dist/vue.global.js:2295
+[    1148ms] [WARNING] [Vue warn]: Failed to resolve component: shop-common-components
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <Index class="app-content" onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< undefined > > 
+  at <RouterView class="app-content" > 
+  at <SpmPage spmb="b002391" onSpmReady=fn<E> > 
+  at <App> @ https://unpkg.shop.jd.com/vue@3.5.18/dist/vue.global.js:2295

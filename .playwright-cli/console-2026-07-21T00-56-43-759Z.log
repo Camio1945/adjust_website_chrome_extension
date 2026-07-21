@@ -1,0 +1,6 @@
+[       6ms] [WARNING] [Vue warn]: Failed to resolve component: shop-common-components
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <Index class="app-content" onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView class="app-content" > 
+  at <SpmPage spmb="b002391" onSpmReady=fn<E> > 
+  at <App> @ https://unpkg.shop.jd.com/vue@3.5.18/dist/vue.global.js:2295

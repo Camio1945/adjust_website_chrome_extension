@@ -1,0 +1,578 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e80]:
+          - button "开发文档" [ref=e82] [cursor=pointer]
+          - button "开发工具" [ref=e88] [cursor=pointer]
+          - button "开发者支持" [ref=e94] [cursor=pointer]
+          - generic [ref=e99] [cursor=pointer]: 服务市场
+        - generic [ref=e15]:
+          - separator [ref=e18]
+          - textbox "请输入文档关键词/开发问题/request_id/错误码" [ref=e19]
+      - generic [ref=e20]:
+        - generic [ref=e21] [cursor=pointer]: 开发者后台
+        - generic [ref=e22] [cursor=pointer]: 登录
+    - generic [ref=e23]:
+      - generic [ref=e102]:
+        - generic [ref=e103] [cursor=pointer]: 文档首页
+        - generic [ref=e105] [cursor=pointer]: 新手指引
+        - generic [ref=e107] [cursor=pointer]: 场景方案
+        - generic [ref=e109] [cursor=pointer]: 示例代码
+        - generic [ref=e111] [cursor=pointer]: 开发指南
+        - generic [ref=e113] [cursor=pointer]: API文档
+        - generic [ref=e115] [cursor=pointer]: SPI文档
+        - generic [ref=e117] [cursor=pointer]: 消息文档
+        - generic [ref=e119] [cursor=pointer]: 常见问题
+        - generic [ref=e121] [cursor=pointer]: 服务市场文档
+      - generic [ref=e24]: 我的文档
+  - generic [ref=e32]:
+    - complementary [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e36]:
+          - button "POP" [ref=e37] [cursor=pointer]
+          - button "自营" [ref=e39] [cursor=pointer]
+          - button "秒送" [ref=e41] [cursor=pointer]
+          - button "酒旅" [ref=e43] [cursor=pointer]
+          - button "政企" [ref=e45] [cursor=pointer]
+          - button "其他" [ref=e47] [cursor=pointer]
+        - combobox "请选择" [ref=e127] [cursor=pointer]
+      - generic [ref=e132]:
+        - menubar [ref=e134]:
+          - menuitem [expanded] [ref=e135]:
+            - menu [ref=e140]:
+              - menuitem "秒送商品概览" [ref=e141] [cursor=pointer]
+              - menuitem "jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.manageStoreGoodsSortBatch 管理门店店内分类商品排序【StoreShopCategoryPlatformService/manageStoreGoodsSortBatch】" [ref=e143] [cursor=pointer]:
+                - generic "jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.manageStoreGoodsSortBatch" [ref=e144]
+                - generic "管理门店店内分类商品排序【StoreShopCategoryPlatformService/manageStoreGoodsSortBatch】" [ref=e145]
+              - menuitem "jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.changeStoreProductCateSortAbility 变更门店店内分类下商品排序能力【StoreShopCategoryPlatformService/shopcategory】" [ref=e146] [cursor=pointer]:
+                - generic "jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.changeStoreProductCateSortAbility" [ref=e147]
+                - generic "变更门店店内分类下商品排序能力【StoreShopCategoryPlatformService/shopcategory】" [ref=e148]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.querySpuBindStationNoListIterator 根据到家spuId查询绑定门店列表【StoreGoodsPlatformService/querySpuBindStationNoListIterator】" [ref=e149] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.querySpuBindStationNoListIterator" [ref=e150]
+                - generic "根据到家spuId查询绑定门店列表【StoreGoodsPlatformService/querySpuBindStationNoListIterator】" [ref=e151]
+              - menuitem "jd.o2o.PmsOpenSkuMainService.queryStoreSkuInfoList 查询门店下商品列表【PmsOpenSkuMainService/queryStoreSkuInfoList】" [ref=e152] [cursor=pointer]:
+                - generic "jd.o2o.PmsOpenSkuMainService.queryStoreSkuInfoList" [ref=e153]
+                - generic "查询门店下商品列表【PmsOpenSkuMainService/queryStoreSkuInfoList】" [ref=e154]
+              - menuitem "jd.o2o.OpenOrgProductAbilityService.queryProductManageAbility 查询商品管理模式接口【OpenOrgProductAbilityService/queryProductManageAbility】" [ref=e155] [cursor=pointer]:
+                - generic "jd.o2o.OpenOrgProductAbilityService.queryProductManageAbility" [ref=e156]
+                - generic "查询商品管理模式接口【OpenOrgProductAbilityService/queryProductManageAbility】" [ref=e157]
+              - menuitem "jd.o2o.PmsCaterPackageService.getPackageInfoByOuterSpuId 查询套餐商品信息接口【PmsCaterPackageService/getPackageInfoByOuterSpuId】" [ref=e158] [cursor=pointer]:
+                - generic "jd.o2o.PmsCaterPackageService.getPackageInfoByOuterSpuId" [ref=e159]
+                - generic "查询套餐商品信息接口【PmsCaterPackageService/getPackageInfoByOuterSpuId】" [ref=e160]
+              - menuitem "jd.o2o.pms.PmsSpuMainService.getSpuInfoByOuterSuperIds 根据outSpuId查询spu信息（新）【PmsSpuMainService.getSpuInfoByOuterSuperIds】" [ref=e161] [cursor=pointer]:
+                - generic "jd.o2o.pms.PmsSpuMainService.getSpuInfoByOuterSuperIds" [ref=e162]
+                - generic "根据outSpuId查询spu信息（新）【PmsSpuMainService.getSpuInfoByOuterSuperIds】" [ref=e163]
+              - menuitem "jd.o2o.PmsSkuMainService.getSkuInfoByOuterSkuIds 根据outSkuId查询sku信息（新）【PmsSkuMainService.getSkuInfoByOuterSkuIds】" [ref=e164] [cursor=pointer]:
+                - generic "jd.o2o.PmsSkuMainService.getSkuInfoByOuterSkuIds" [ref=e165]
+                - generic "根据outSkuId查询sku信息（新）【PmsSkuMainService.getSkuInfoByOuterSkuIds】" [ref=e166]
+              - menuitem "jd.o2o.store.storeShopCategoryPlatformService.manageStoreGoodsBusiness 门店商品店内分类解绑/绑定接口【store/storeShopCategoryPlatformService/manageStoreGoodsBusiness】" [ref=e167] [cursor=pointer]:
+                - generic "jd.o2o.store.storeShopCategoryPlatformService.manageStoreGoodsBusiness" [ref=e168]
+                - generic "门店商品店内分类解绑/绑定接口【store/storeShopCategoryPlatformService/manageStoreGoodsBusiness】" [ref=e169]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.unBindStoreSpu 解绑门店SPU关系【StoreGoodsPlatformService/unBindStoreSpu】" [ref=e170] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.unBindStoreSpu" [ref=e171]
+                - generic "解绑门店SPU关系【StoreGoodsPlatformService/unBindStoreSpu】" [ref=e172]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.bindStoreSpu 绑定门店SPU关系【StoreGoodsPlatformService/bindStoreSpu】" [ref=e173] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.bindStoreSpu" [ref=e174]
+                - generic "绑定门店SPU关系【StoreGoodsPlatformService/bindStoreSpu】" [ref=e175]
+              - menuitem "jd.o2o.OpenCateAttrService.deleteSpuCateAttrValue 删除spu的类目属性值信息【OpenCateAttrService/deleteSpuCateAttrValue】" [ref=e176] [cursor=pointer]:
+                - generic "jd.o2o.OpenCateAttrService.deleteSpuCateAttrValue" [ref=e177]
+                - generic "删除spu的类目属性值信息【OpenCateAttrService/deleteSpuCateAttrValue】" [ref=e178]
+              - menuitem "jd.o2o.OpenCateAttrService.updateSpuCateAttrValue 更新spu的类目属性值信息【OpenCateAttrService/updateSpuCateAttrValue】" [ref=e179] [cursor=pointer]:
+                - generic "jd.o2o.OpenCateAttrService.updateSpuCateAttrValue" [ref=e180]
+                - generic "更新spu的类目属性值信息【OpenCateAttrService/updateSpuCateAttrValue】" [ref=e181]
+              - menuitem "jd.o2o.OpenCateAttrService.addSpuCateAttrValue 新增spu的类目属性值信息【OpenCateAttrService/addSpuCateAttrValue】" [ref=e182] [cursor=pointer]:
+                - generic "jd.o2o.OpenCateAttrService.addSpuCateAttrValue" [ref=e183]
+                - generic "新增spu的类目属性值信息【OpenCateAttrService/addSpuCateAttrValue】" [ref=e184]
+              - menuitem "jd.o2o.StoreRefMarkBuildService.spuMark 招牌、新品门店spu打标【StoreRefMarkBuildService/spuMark】" [ref=e185] [cursor=pointer]:
+                - generic "jd.o2o.StoreRefMarkBuildService.spuMark" [ref=e186]
+                - generic "招牌、新品门店spu打标【StoreRefMarkBuildService/spuMark】" [ref=e187]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.manageStoreGoodsAttribute 批量维护门店商品属性【StoreGoodsPlatformService/manageStoreGoodsAttribute】" [ref=e188] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.manageStoreGoodsAttribute" [ref=e189]
+                - generic "批量维护门店商品属性【StoreGoodsPlatformService/manageStoreGoodsAttribute】" [ref=e190]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.queryRollStationRelatedSku 查询门店下门店商品绑定关系接口【StoreGoodsPlatformService/queryRollStationRelatedSku】" [ref=e191] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.queryRollStationRelatedSku" [ref=e192]
+                - generic "查询门店下门店商品绑定关系接口【StoreGoodsPlatformService/queryRollStationRelatedSku】" [ref=e193]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.queryStoreGoods 查询门店商品关系接口【StoreGoodsPlatformService/queryStoreGoods】" [ref=e194] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.queryStoreGoods" [ref=e195]
+                - generic "查询门店商品关系接口【StoreGoodsPlatformService/queryStoreGoods】" [ref=e196]
+              - menuitem "jd.o2o.PmsSkuMainService.getSkuByOuterSkuIds 通过商家skuId查询到家skuId接口【PmsSkuMainService/getSkuByOuterSkuIds】" [ref=e197] [cursor=pointer]:
+                - generic "jd.o2o.PmsSkuMainService.getSkuByOuterSkuIds" [ref=e198]
+                - generic "通过商家skuId查询到家skuId接口【PmsSkuMainService/getSkuByOuterSkuIds】" [ref=e199]
+              - menuitem "jd.o2o.pms.querySkuInfoList 新查询商家已上传商品信息列表接口【pms/querySkuInfoList】" [ref=e200] [cursor=pointer]:
+                - generic "jd.o2o.pms.querySkuInfoList" [ref=e201]
+                - generic "新查询商家已上传商品信息列表接口【pms/querySkuInfoList】" [ref=e202]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.unBindStoreGoods 解绑商家商品-门店商品关联关系【StoreGoodsPlatformService/unBindStoreGoods】" [ref=e203] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.unBindStoreGoods" [ref=e204]
+                - generic "解绑商家商品-门店商品关联关系【StoreGoodsPlatformService/unBindStoreGoods】" [ref=e205]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.bindStoreGoods 绑定商家商品-门店商品关联关系【StoreGoodsPlatformService/bindStoreGoods】" [ref=e206] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.bindStoreGoods" [ref=e207]
+                - generic "绑定商家商品-门店商品关联关系【StoreGoodsPlatformService/bindStoreGoods】" [ref=e208]
+              - menuitem "jd.o2o.StoreGoodsPlatformService.manageProcessService 添加加工服务属性【StoreGoodsPlatformService/manageProcessService】" [ref=e209] [cursor=pointer]:
+                - generic "jd.o2o.StoreGoodsPlatformService.manageProcessService" [ref=e210]
+                - generic "添加加工服务属性【StoreGoodsPlatformService/manageProcessService】" [ref=e211]
+              - menuitem "jd.o2o.PmsSpecialAttrService.queryCategoryRelationSpecialAttr 根据类目id查询类目下关联特殊属性【PmsSpecialAttrService/queryCategoryRelationSpecialAttr】" [ref=e212] [cursor=pointer]:
+                - generic "jd.o2o.PmsSpecialAttrService.queryCategoryRelationSpecialAttr" [ref=e213]
+                - generic "根据类目id查询类目下关联特殊属性【PmsSpecialAttrService/queryCategoryRelationSpecialAttr】" [ref=e214]
+              - menuitem "jd.o2o.PmsSpecialAttrService.querySpecialAttrDicByCodes 根据特殊属性id查询特殊属性值【PmsSpecialAttrService/querySpecialAttrDicByCodes】" [ref=e215] [cursor=pointer]:
+                - generic "jd.o2o.PmsSpecialAttrService.querySpecialAttrDicByCodes" [ref=e216]
+                - generic "根据特殊属性id查询特殊属性值【PmsSpecialAttrService/querySpecialAttrDicByCodes】" [ref=e217]
+              - menuitem "jd.o2o.pms.getSkuCateBrandBySkuName 根据商品名称获取推荐的类目品牌接口【pms/getSkuCateBrandBySkuName】" [ref=e218] [cursor=pointer]:
+                - generic "jd.o2o.pms.getSkuCateBrandBySkuName" [ref=e219]
+                - generic "根据商品名称获取推荐的类目品牌接口【pms/getSkuCateBrandBySkuName】" [ref=e220]
+              - menuitem "jd.o2o.pms.getAllSkuCategoryAttr 查询类目属性字典信息接口【pms/getAllSkuCategoryAttr】" [ref=e221] [cursor=pointer]:
+                - generic "jd.o2o.pms.getAllSkuCategoryAttr" [ref=e222]
+                - generic "查询类目属性字典信息接口【pms/getAllSkuCategoryAttr】" [ref=e223]
+              - menuitem "jd.o2o.pms.getSkuCategoryAttrByCategoryId 根据末级类目ID查询类目属性字典信息接口【pms/getSkuCategoryAttrByCategoryId】" [ref=e224] [cursor=pointer]:
+                - generic "jd.o2o.pms.getSkuCategoryAttrByCategoryId" [ref=e225]
+                - generic "根据末级类目ID查询类目属性字典信息接口【pms/getSkuCategoryAttrByCategoryId】" [ref=e226]
+              - menuitem "jd.o2o.pms.deleteSkuCateAttrValue 删除商品类目属性值信息接口【pms/deleteSkuCateAttrValue】" [ref=e227] [cursor=pointer]:
+                - generic "jd.o2o.pms.deleteSkuCateAttrValue" [ref=e228]
+                - generic "删除商品类目属性值信息接口【pms/deleteSkuCateAttrValue】" [ref=e229]
+              - menuitem "jd.o2o.pms.addSkuCateAttrValue 新增商品类目属性值信息接口【pms/addSkuCateAttrValue】" [ref=e230] [cursor=pointer]:
+                - generic "jd.o2o.pms.addSkuCateAttrValue" [ref=e231]
+                - generic "新增商品类目属性值信息接口【pms/addSkuCateAttrValue】" [ref=e232]
+              - menuitem "jd.o2o.pms.updateSkuCateAttrValue 更新商品类目属性值信息接口【pms/updateSkuCateAttrValue】" [ref=e233] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateSkuCateAttrValue" [ref=e234]
+                - generic "更新商品类目属性值信息接口【pms/updateSkuCateAttrValue】" [ref=e235]
+              - menuitem "jd.o2o.pms.getSkuCateAttrValuesBySkuId 根据商品查询类目属性值信息接口【pms/getSkuCateAttrValuesBySkuId】" [ref=e236] [cursor=pointer]:
+                - generic "jd.o2o.pms.getSkuCateAttrValuesBySkuId" [ref=e237]
+                - generic "根据商品查询类目属性值信息接口【pms/getSkuCateAttrValuesBySkuId】" [ref=e238]
+              - menuitem "jd.o2o.pms.querySkuListBySuperIds 查询spu下sku列表接口【pms/querySkuListBySuperIds】" [ref=e239] [cursor=pointer]:
+                - generic "jd.o2o.pms.querySkuListBySuperIds" [ref=e240]
+                - generic "查询spu下sku列表接口【pms/querySkuListBySuperIds】" [ref=e241]
+              - menuitem "jd.o2o.pms.deleteVideo 根据到家商品视频ID删除商品视频接口【pms/deleteVideo】" [ref=e242] [cursor=pointer]:
+                - generic "jd.o2o.pms.deleteVideo" [ref=e243]
+                - generic "根据到家商品视频ID删除商品视频接口【pms/deleteVideo】" [ref=e244]
+              - menuitem "jd.o2o.pms.updateBindingStatus 根据到家商品视频id修改绑定状态【pms/updateBindingStatus】" [ref=e245] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateBindingStatus" [ref=e246]
+                - generic "根据到家商品视频id修改绑定状态【pms/updateBindingStatus】" [ref=e247]
+              - menuitem "jd.o2o.pms.getVideoInfoById 根据到家视频ID查询商家已上传商品视频【pms/getVideoInfoById】" [ref=e248] [cursor=pointer]:
+                - generic "jd.o2o.pms.getVideoInfoById" [ref=e249]
+                - generic "根据到家视频ID查询商家已上传商品视频【pms/getVideoInfoById】" [ref=e250]
+              - menuitem "jd.o2o.pms.uploadVideo 通过url上传商品视频接口【pms/uploadVideo】" [ref=e251] [cursor=pointer]:
+                - generic "jd.o2o.pms.uploadVideo" [ref=e252]
+                - generic "通过url上传商品视频接口【pms/uploadVideo】" [ref=e253]
+              - menuitem "jd.o2o.pms.getSpuInfo 获取商家SPU基本信息接口【pms/getSpuInfo】" [ref=e254] [cursor=pointer]:
+                - generic "jd.o2o.pms.getSpuInfo" [ref=e255]
+                - generic "获取商家SPU基本信息接口【pms/getSpuInfo】" [ref=e256]
+              - menuitem "jd.o2o.pms.listSkuManageReason 到家商品skuid查询违规商品信息接口【pms/listSkuManageReason】" [ref=e257] [cursor=pointer]:
+                - generic "jd.o2o.pms.listSkuManageReason" [ref=e258]
+                - generic "到家商品skuid查询违规商品信息接口【pms/listSkuManageReason】" [ref=e259]
+              - menuitem "jd.o2o.OpenPmsCategorySaleAttrService.queryPmsCategorySaleAttr 根据平台类目id查询类目销售属性【OpenPmsCategorySaleAttrService/queryPmsCategorySaleAttr】" [ref=e260] [cursor=pointer]:
+                - generic "jd.o2o.OpenPmsCategorySaleAttrService.queryPmsCategorySaleAttr" [ref=e261]
+                - generic "根据平台类目id查询类目销售属性【OpenPmsCategorySaleAttrService/queryPmsCategorySaleAttr】" [ref=e262]
+              - menuitem "jd.o2o.pms.batchUpdateOutSuperId 批量更新商家商品SPU编码接口【pms/batchUpdateOutSuperId】" [ref=e263] [cursor=pointer]:
+                - generic "jd.o2o.pms.batchUpdateOutSuperId" [ref=e264]
+                - generic "批量更新商家商品SPU编码接口【pms/batchUpdateOutSuperId】" [ref=e265]
+              - menuitem "jd.o2o.pms.getSkuStatus 新版查询商品创建状态接口【pms/getSkuStatus】" [ref=e266] [cursor=pointer]:
+                - generic "jd.o2o.pms.getSkuStatus" [ref=e267]
+                - generic "新版查询商品创建状态接口【pms/getSkuStatus】" [ref=e268]
+              - menuitem "jd.o2o.pms.updateSku 新版根据商家商品编码修改商品信息接口【pms/updateSku】" [ref=e269] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateSku" [ref=e270]
+                - generic "新版根据商家商品编码修改商品信息接口【pms/updateSku】" [ref=e271]
+              - menuitem "jd.o2o.pms.addSku 新版新增商品信息接口【pms/addSku】" [ref=e272] [cursor=pointer]:
+                - generic "jd.o2o.pms.addSku" [ref=e273]
+                - generic "新版新增商品信息接口【pms/addSku】" [ref=e274]
+              - menuitem "jd.o2o.pms.batchAddSku 新版根据商品UPC码批量新增商品接口【pms/batchAddSku】" [ref=e275] [cursor=pointer]:
+                - generic "jd.o2o.pms.batchAddSku" [ref=e276]
+                - generic "新版根据商品UPC码批量新增商品接口【pms/batchAddSku】" [ref=e277]
+              - menuitem "jd.o2o.pms.getSpuStatus 查询SPU创建状态接口【pms/getSpuStatus】" [ref=e278] [cursor=pointer]:
+                - generic "jd.o2o.pms.getSpuStatus" [ref=e279]
+                - generic "查询SPU创建状态接口【pms/getSpuStatus】" [ref=e280]
+              - menuitem "jd.o2o.pms.getSpuSaleAttr 查询SPU下所有的销售属性信息接口【pms/getSpuSaleAttr】" [ref=e281] [cursor=pointer]:
+                - generic "jd.o2o.pms.getSpuSaleAttr" [ref=e282]
+                - generic "查询SPU下所有的销售属性信息接口【pms/getSpuSaleAttr】" [ref=e283]
+              - menuitem "jd.o2o.pms.appendSpuSaleAttr 追加新的SPU销售属性信息接口【pms/appendSpuSaleAttr】" [ref=e284] [cursor=pointer]:
+                - generic "jd.o2o.pms.appendSpuSaleAttr" [ref=e285]
+                - generic "追加新的SPU销售属性信息接口【pms/appendSpuSaleAttr】" [ref=e286]
+              - menuitem "jd.o2o.pms.updateSpuSaleAttr 更新SPU销售属性信息接口【pms/updateSpuSaleAttr】" [ref=e287] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateSpuSaleAttr" [ref=e288]
+                - generic "更新SPU销售属性信息接口【pms/updateSpuSaleAttr】" [ref=e289]
+              - menuitem "jd.o2o.pms.updateSpu 更新SPU基础信息接口【pms/updateSpu】" [ref=e290] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateSpu" [ref=e291]
+                - generic "更新SPU基础信息接口【pms/updateSpu】" [ref=e292]
+              - menuitem "jd.o2o.pms.appendSku 追加新的SKU到指定的SPU接口【pms/appendSku】" [ref=e293] [cursor=pointer]:
+                - generic "jd.o2o.pms.appendSku" [ref=e294]
+                - generic "追加新的SKU到指定的SPU接口【pms/appendSku】" [ref=e295]
+              - menuitem "jd.o2o.pms.updateSkuBaseInfo 更新SPU下指定SKU的基础信息接口【pms/updateSkuBaseInfo】" [ref=e296] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateSkuBaseInfo" [ref=e297]
+                - generic "更新SPU下指定SKU的基础信息接口【pms/updateSkuBaseInfo】" [ref=e298]
+              - menuitem "jd.o2o.pms.sku.batchUpdateOutSkuId 根据到家商品编码批量更新商家商品编码接口【pms/sku/batchUpdateOutSkuId】" [ref=e299] [cursor=pointer]:
+                - generic "jd.o2o.pms.sku.batchUpdateOutSkuId" [ref=e300]
+                - generic "根据到家商品编码批量更新商家商品编码接口【pms/sku/batchUpdateOutSkuId】" [ref=e301]
+              - menuitem "jd.o2o.pms.queryCategoriesByOrgCode 查询商家店内分类信息接口【pms/queryCategoriesByOrgCode】" [ref=e302] [cursor=pointer]:
+                - generic "jd.o2o.pms.queryCategoriesByOrgCode" [ref=e303]
+                - generic "查询商家店内分类信息接口【pms/queryCategoriesByOrgCode】" [ref=e304]
+              - menuitem "jd.o2o.pms.delShopCategory 删除商家店内分类接口【pms/delShopCategory】" [ref=e305] [cursor=pointer]:
+                - generic "jd.o2o.pms.delShopCategory" [ref=e306]
+                - generic "删除商家店内分类接口【pms/delShopCategory】" [ref=e307]
+              - menuitem "jd.o2o.pms.updateShopCategory 修改商家店内分类信息接口【pms/updateShopCategory】" [ref=e308] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateShopCategory" [ref=e309]
+                - generic "修改商家店内分类信息接口【pms/updateShopCategory】" [ref=e310]
+              - menuitem "jd.o2o.pms.addShopCategory 新增商家店内分类信息接口【pms/addShopCategory】" [ref=e311] [cursor=pointer]:
+                - generic "jd.o2o.pms.addShopCategory" [ref=e312]
+                - generic "新增商家店内分类信息接口【pms/addShopCategory】" [ref=e313]
+              - menuitem "jd.o2o.pms.changeShopCategoryOrder 修改商家店内分类顺序接口【pms/changeShopCategoryOrder】" [ref=e314] [cursor=pointer]:
+                - generic "jd.o2o.pms.changeShopCategoryOrder" [ref=e315]
+                - generic "修改商家店内分类顺序接口【pms/changeShopCategoryOrder】" [ref=e316]
+              - menuitem "jd.o2o.pms.queryKeyWordDicInfo 分页查询京东到家商品前缀库接口【pms/queryKeyWordDicInfo】" [ref=e317] [cursor=pointer]:
+                - generic "jd.o2o.pms.queryKeyWordDicInfo" [ref=e318]
+                - generic "分页查询京东到家商品前缀库接口【pms/queryKeyWordDicInfo】" [ref=e319]
+              - menuitem "jd.o2o.api.queryChildCategoriesForOP 获取京东到家类目信息接口【api/queryChildCategoriesForOP】" [ref=e320] [cursor=pointer]:
+                - generic "jd.o2o.api.queryChildCategoriesForOP" [ref=e321]
+                - generic "获取京东到家类目信息接口【api/queryChildCategoriesForOP】" [ref=e322]
+              - menuitem "jd.o2o.order.queryListBySkuIds 查询商品图片处理结果接口【order/queryListBySkuIds】" [ref=e323] [cursor=pointer]:
+                - generic "jd.o2o.order.queryListBySkuIds" [ref=e324]
+                - generic "查询商品图片处理结果接口【order/queryListBySkuIds】" [ref=e325]
+              - menuitem "jd.o2o.pms.queryPageBrandInfo 分页查询商品品牌信息接口【pms/queryPageBrandInfo】" [ref=e326] [cursor=pointer]:
+                - generic "jd.o2o.pms.queryPageBrandInfo" [ref=e327]
+                - generic "分页查询商品品牌信息接口【pms/queryPageBrandInfo】" [ref=e328]
+              - menuitem "jd.o2o.pms.savePackage 新增、修改商品套餐信息接口【pms/savePackage】" [ref=e329] [cursor=pointer]:
+                - generic "jd.o2o.pms.savePackage" [ref=e330]
+                - generic "新增、修改商品套餐信息接口【pms/savePackage】" [ref=e331]
+              - menuitem "jd.o2o.StoreShopCategoryPlatformService.manageStoreGoodsSortBatch 管理门店店内分类商品排序【StoreShopCategoryPlatformService/manageStoreGoodsSortBatch】" [ref=e332] [cursor=pointer]:
+                - generic "jd.o2o.StoreShopCategoryPlatformService.manageStoreGoodsSortBatch" [ref=e333]
+                - generic "管理门店店内分类商品排序【StoreShopCategoryPlatformService/manageStoreGoodsSortBatch】" [ref=e334]
+              - menuitem "jd.o2o.pms.addSpu 新增SPU信息接口【pms/addSpu】" [ref=e335] [cursor=pointer]:
+                - generic "jd.o2o.pms.addSpu" [ref=e336]
+                - generic "新增SPU信息接口【pms/addSpu】" [ref=e337]
+              - menuitem "jd.o2o.pms.updateWareRollBackStatus 恢复已删除的sku【pms/updateWareRollBackStatus】" [ref=e338] [cursor=pointer]:
+                - generic "jd.o2o.pms.updateWareRollBackStatus" [ref=e339]
+                - generic "恢复已删除的sku【pms/updateWareRollBackStatus】" [ref=e340]
+              - menuitem "jd.o2o.pms.OpenAlgoRecommendService.submitRecommendTask 提交批量推荐任务" [ref=e341] [cursor=pointer]:
+                - generic "jd.o2o.pms.OpenAlgoRecommendService.submitRecommendTask" [ref=e342]
+                - generic "提交批量推荐任务" [ref=e343]
+              - menuitem "jd.o2o.pms.OpenAlgoRecommendService.queryRecommendResult 查询推荐任务结果" [ref=e344] [cursor=pointer]:
+                - generic "jd.o2o.pms.OpenAlgoRecommendService.queryRecommendResult" [ref=e345]
+                - generic "查询推荐任务结果" [ref=e346]
+              - menuitem "jd.o2o.pms.appendSpuSaleAttrV2 追加SPU销售属性值V2版本" [ref=e347] [cursor=pointer]:
+                - generic "jd.o2o.pms.appendSpuSaleAttrV2" [ref=e348]
+                - generic "追加SPU销售属性值V2版本" [ref=e349]
+              - menuitem "jd.o2o.PmsLightFoodSpuService.saveSpu 新增、修改SPU信息接口【PmsLightFoodSpuService/saveSpu】" [ref=e350] [cursor=pointer]:
+                - generic "jd.o2o.PmsLightFoodSpuService.saveSpu" [ref=e351]
+                - generic "新增、修改SPU信息接口【PmsLightFoodSpuService/saveSpu】" [ref=e352]
+              - menuitem "jd.o2o.pms.OpenSpuService.querySpuInfoList 查询商家下spu列表【OpenSpuService/querySpuInfoList】" [ref=e353] [cursor=pointer]:
+                - generic "jd.o2o.pms.OpenSpuService.querySpuInfoList" [ref=e354]
+                - generic "查询商家下spu列表【OpenSpuService/querySpuInfoList】" [ref=e355]
+          - menuitem [ref=e356]
+          - menuitem [ref=e361]
+          - menuitem [ref=e366]
+          - menuitem [ref=e371]
+          - menuitem [ref=e376]
+          - menuitem [ref=e381]
+          - menuitem [ref=e386]
+          - menuitem [ref=e391]
+          - menuitem [ref=e396]
+          - menuitem [ref=e401]
+        - textbox "在目录中筛选" [ref=e413]
+    - main [ref=e58]:
+      - navigation "Breadcrumb" [ref=e60]:
+        - link "API文档" [ref=e62]
+        - link "秒送商品" [ref=e418]
+        - link "秒送商品概览" [ref=e423]
+      - generic [ref=e63]:
+        - generic [ref=e425]:
+          - generic [ref=e426]: 秒送商品概览
+          - generic [ref=e427]: 全部API
+          - generic [ref=e428]:
+            - generic [ref=e430]:
+              - table [ref=e432]:
+                - rowgroup [ref=e437]:
+                  - row [ref=e438]:
+                    - columnheader "接口名称" [ref=e439]
+                    - columnheader "描述" [ref=e441]
+                    - columnheader "操作" [ref=e443]
+              - table [ref=e449]:
+                - rowgroup [ref=e454]:
+                  - row [ref=e455]:
+                    - cell "管理门店店内分类商品排序【StoreShopCategoryPlatformService/manageStoreGoodsSortBatch】 jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.manageStoreGoodsSortBatch" [ref=e456]:
+                      - generic [ref=e458]:
+                        - generic "管理门店店内分类商品排序【StoreShopCategoryPlatformService/manageStoreGoodsSortBatch】" [ref=e459]
+                        - generic "jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.manageStoreGoodsSortBatch" [ref=e460]
+                    - cell "管理门店店内分类商品排序" [ref=e461]:
+                      - generic "管理门店店内分类商品排序" [ref=e463]
+                    - cell [ref=e464]:
+                      - button "查看文档" [ref=e466] [cursor=pointer]
+                  - row [ref=e468]:
+                    - cell "变更门店店内分类下商品排序能力【StoreShopCategoryPlatformService/shopcategory】 jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.changeStoreProductCateSortAbility" [ref=e469]:
+                      - generic [ref=e471]:
+                        - generic "变更门店店内分类下商品排序能力【StoreShopCategoryPlatformService/shopcategory】" [ref=e472]
+                        - generic "jd.o2o.store.goods.manage.api.shopcategory.StoreShopCategoryPlatformService.changeStoreProductCateSortAbility" [ref=e473]
+                    - cell "变更门店店内分类下商品排序能力" [ref=e474]:
+                      - generic "变更门店店内分类下商品排序能力" [ref=e476]
+                    - cell [ref=e477]:
+                      - button "查看文档" [ref=e479] [cursor=pointer]
+                  - row [ref=e481]:
+                    - cell "根据到家spuId查询绑定门店列表【StoreGoodsPlatformService/querySpuBindStationNoListIterator】 jd.o2o.StoreGoodsPlatformService.querySpuBindStationNoListIterator" [ref=e482]:
+                      - generic [ref=e484]:
+                        - generic "根据到家spuId查询绑定门店列表【StoreGoodsPlatformService/querySpuBindStationNoListIterator】" [ref=e485]
+                        - generic "jd.o2o.StoreGoodsPlatformService.querySpuBindStationNoListIterator" [ref=e486]
+                    - cell "根据到家spuId查询绑定门店列表" [ref=e487]:
+                      - generic "根据到家spuId查询绑定门店列表" [ref=e489]
+                    - cell [ref=e490]:
+                      - button "查看文档" [ref=e492] [cursor=pointer]
+                  - row [ref=e494]:
+                    - cell "查询门店下商品列表【PmsOpenSkuMainService/queryStoreSkuInfoList】 jd.o2o.PmsOpenSkuMainService.queryStoreSkuInfoList" [ref=e495]:
+                      - generic [ref=e497]:
+                        - generic "查询门店下商品列表【PmsOpenSkuMainService/queryStoreSkuInfoList】" [ref=e498]
+                        - generic "jd.o2o.PmsOpenSkuMainService.queryStoreSkuInfoList" [ref=e499]
+                    - cell [ref=e500]:
+                      - generic "查询门店下商品列表</br>入参参数定义（QueryProductManageAbilityRequest request）</br>1.stationNo和outStationNo必填其中一项</br> 2.如果根据商品名称查询，skuName必填；如果根据id查询，outSuperId和superId必传其中一项 或 skuId和outSkuId必传其中一项</br> 3.只有根据商品名称查询，pageSize必传，且必须 <=10</br> 4.searchAfterId首次查询时可为null，后续查询取查询结果的最后1条结果的skuId</br> 5.终止条件：通过出参返回结果数量和pageSize来进行判断是否终止，当出参返回结果数量 < pageSize时终止 </br> 6.查询优先级：6.1 > 6.2 > 6.3 > 6.4</br> 6.1.skuId/outSkuId+stationNo/outStationNo</br> 6.2.spuId/outSpuId+stationNo/outStationNo</br> 6.3.skuName+stationNo/outStationNo+pageSize+searchAfterId</br> 6.4.stationNo/outStationNo+pageSize+searchAfterId" [ref=e502]: 查询门店下商品列表入参参数定义（QueryProductManageAbilityRequest request）1.stationNo和outStationNo必填其中一项 2.如果根据商品名称查询，skuName必填；如果根据id查询，outSuperId和superId必传其中一项 或 skuId和outSkuId必传其中一项 3.只有根据商品名称查询，pageSize必传，且必须 <=10 4.searchAfterId首次查询时可为null，后续查询取查询结果的最后1条结果的skuId 5.终止条件：通过出参返回结果数量和pageSize来进行判断是否终止，当出参返回结果数量 < pageSize时终止 6.查询优先级：6.1 > 6.2 > 6.3 > 6.4 6.1.skuId/outSkuId+stationNo/outStationNo 6.2.spuId/outSpuId+stationNo/outStationNo 6.3.skuName+stationNo/outStationNo+pageSize+searchAfterId 6.4.stationNo/outStationNo+pageSize+searchAfterId
+                    - cell [ref=e504]:
+                      - button "查看文档" [ref=e506] [cursor=pointer]
+                  - row [ref=e508]:
+                    - cell "查询商品管理模式接口【OpenOrgProductAbilityService/queryProductManageAbility】 jd.o2o.OpenOrgProductAbilityService.queryProductManageAbility" [ref=e509]:
+                      - generic [ref=e511]:
+                        - generic "查询商品管理模式接口【OpenOrgProductAbilityService/queryProductManageAbility】" [ref=e512]
+                        - generic "jd.o2o.OpenOrgProductAbilityService.queryProductManageAbility" [ref=e513]
+                    - cell "查询商品管理模式接口" [ref=e514]:
+                      - generic "查询商品管理模式接口" [ref=e516]
+                    - cell [ref=e517]:
+                      - button "查看文档" [ref=e519] [cursor=pointer]
+                  - row [ref=e521]:
+                    - cell "查询套餐商品信息接口【PmsCaterPackageService/getPackageInfoByOuterSpuId】 jd.o2o.PmsCaterPackageService.getPackageInfoByOuterSpuId" [ref=e522]:
+                      - generic [ref=e524]:
+                        - generic "查询套餐商品信息接口【PmsCaterPackageService/getPackageInfoByOuterSpuId】" [ref=e525]
+                        - generic "jd.o2o.PmsCaterPackageService.getPackageInfoByOuterSpuId" [ref=e526]
+                    - cell "查询套餐商品信息接口" [ref=e527]:
+                      - generic "查询套餐商品信息接口" [ref=e529]
+                    - cell [ref=e530]:
+                      - button "查看文档" [ref=e532] [cursor=pointer]
+                  - row [ref=e534]:
+                    - cell "根据outSpuId查询spu信息（新）【PmsSpuMainService.getSpuInfoByOuterSuperIds】 jd.o2o.pms.PmsSpuMainService.getSpuInfoByOuterSuperIds" [ref=e535]:
+                      - generic [ref=e537]:
+                        - generic "根据outSpuId查询spu信息（新）【PmsSpuMainService.getSpuInfoByOuterSuperIds】" [ref=e538]
+                        - generic "jd.o2o.pms.PmsSpuMainService.getSpuInfoByOuterSuperIds" [ref=e539]
+                    - cell "根据outSpuId查询spu信息（新）" [ref=e540]:
+                      - generic "根据outSpuId查询spu信息（新）" [ref=e542]
+                    - cell [ref=e543]:
+                      - button "查看文档" [ref=e545] [cursor=pointer]
+                  - row [ref=e547]:
+                    - cell "根据outSkuId查询sku信息（新）【PmsSkuMainService.getSkuInfoByOuterSkuIds】 jd.o2o.PmsSkuMainService.getSkuInfoByOuterSkuIds" [ref=e548]:
+                      - generic [ref=e550]:
+                        - generic "根据outSkuId查询sku信息（新）【PmsSkuMainService.getSkuInfoByOuterSkuIds】" [ref=e551]
+                        - generic "jd.o2o.PmsSkuMainService.getSkuInfoByOuterSkuIds" [ref=e552]
+                    - cell "根据outSkuId查询sku信息（新）" [ref=e553]:
+                      - generic "根据outSkuId查询sku信息（新）" [ref=e555]
+                    - cell [ref=e556]:
+                      - button "查看文档" [ref=e558] [cursor=pointer]
+                  - row [ref=e560]:
+                    - cell "门店商品店内分类解绑/绑定接口【store/storeShopCategoryPlatformService/manageStoreGoodsBusiness】 jd.o2o.store.storeShopCategoryPlatformService.manageStoreGoodsBusiness" [ref=e561]:
+                      - generic [ref=e563]:
+                        - generic "门店商品店内分类解绑/绑定接口【store/storeShopCategoryPlatformService/manageStoreGoodsBusiness】" [ref=e564]
+                        - generic "jd.o2o.store.storeShopCategoryPlatformService.manageStoreGoodsBusiness" [ref=e565]
+                    - cell "门店商品店内分类解绑/绑定接口" [ref=e566]:
+                      - generic "门店商品店内分类解绑/绑定接口" [ref=e568]
+                    - cell [ref=e569]:
+                      - button "查看文档" [ref=e571] [cursor=pointer]
+                  - row [ref=e573]:
+                    - cell "解绑门店SPU关系【StoreGoodsPlatformService/unBindStoreSpu】 jd.o2o.StoreGoodsPlatformService.unBindStoreSpu" [ref=e574]:
+                      - generic [ref=e576]:
+                        - generic "解绑门店SPU关系【StoreGoodsPlatformService/unBindStoreSpu】" [ref=e577]
+                        - generic "jd.o2o.StoreGoodsPlatformService.unBindStoreSpu" [ref=e578]
+                    - cell "解绑门店SPU关系" [ref=e579]:
+                      - generic "解绑门店SPU关系" [ref=e581]
+                    - cell [ref=e582]:
+                      - button "查看文档" [ref=e584] [cursor=pointer]
+                  - row [ref=e586]:
+                    - cell "绑定门店SPU关系【StoreGoodsPlatformService/bindStoreSpu】 jd.o2o.StoreGoodsPlatformService.bindStoreSpu" [ref=e587]:
+                      - generic [ref=e589]:
+                        - generic "绑定门店SPU关系【StoreGoodsPlatformService/bindStoreSpu】" [ref=e590]
+                        - generic "jd.o2o.StoreGoodsPlatformService.bindStoreSpu" [ref=e591]
+                    - cell "绑定门店SPU关系" [ref=e592]:
+                      - generic "绑定门店SPU关系" [ref=e594]
+                    - cell [ref=e595]:
+                      - button "查看文档" [ref=e597] [cursor=pointer]
+                  - row [ref=e599]:
+                    - cell "删除spu的类目属性值信息【OpenCateAttrService/deleteSpuCateAttrValue】 jd.o2o.OpenCateAttrService.deleteSpuCateAttrValue" [ref=e600]:
+                      - generic [ref=e602]:
+                        - generic "删除spu的类目属性值信息【OpenCateAttrService/deleteSpuCateAttrValue】" [ref=e603]
+                        - generic "jd.o2o.OpenCateAttrService.deleteSpuCateAttrValue" [ref=e604]
+                    - cell "删除spu的类目属性值信息" [ref=e605]:
+                      - generic "删除spu的类目属性值信息" [ref=e607]
+                    - cell [ref=e608]:
+                      - button "查看文档" [ref=e610] [cursor=pointer]
+                  - row [ref=e612]:
+                    - cell "更新spu的类目属性值信息【OpenCateAttrService/updateSpuCateAttrValue】 jd.o2o.OpenCateAttrService.updateSpuCateAttrValue" [ref=e613]:
+                      - generic [ref=e615]:
+                        - generic "更新spu的类目属性值信息【OpenCateAttrService/updateSpuCateAttrValue】" [ref=e616]
+                        - generic "jd.o2o.OpenCateAttrService.updateSpuCateAttrValue" [ref=e617]
+                    - cell "更新spu的类目属性值信息" [ref=e618]:
+                      - generic "更新spu的类目属性值信息" [ref=e620]
+                    - cell [ref=e621]:
+                      - button "查看文档" [ref=e623] [cursor=pointer]
+                  - row [ref=e625]:
+                    - cell "新增spu的类目属性值信息【OpenCateAttrService/addSpuCateAttrValue】 jd.o2o.OpenCateAttrService.addSpuCateAttrValue" [ref=e626]:
+                      - generic [ref=e628]:
+                        - generic "新增spu的类目属性值信息【OpenCateAttrService/addSpuCateAttrValue】" [ref=e629]
+                        - generic "jd.o2o.OpenCateAttrService.addSpuCateAttrValue" [ref=e630]
+                    - cell "新增spu的类目属性值信息" [ref=e631]:
+                      - generic "新增spu的类目属性值信息" [ref=e633]
+                    - cell [ref=e634]:
+                      - button "查看文档" [ref=e636] [cursor=pointer]
+                  - row [ref=e638]:
+                    - cell "招牌、新品门店spu打标【StoreRefMarkBuildService/spuMark】 jd.o2o.StoreRefMarkBuildService.spuMark" [ref=e639]:
+                      - generic [ref=e641]:
+                        - generic "招牌、新品门店spu打标【StoreRefMarkBuildService/spuMark】" [ref=e642]
+                        - generic "jd.o2o.StoreRefMarkBuildService.spuMark" [ref=e643]
+                    - cell "门店spu打标上限15条记录，如删除商品请优先删除打标。" [ref=e644]:
+                      - generic "门店spu打标上限15条记录，如删除商品请优先删除打标。" [ref=e646]
+                    - cell [ref=e647]:
+                      - button "查看文档" [ref=e649] [cursor=pointer]
+                  - row [ref=e651]:
+                    - cell "批量维护门店商品属性【StoreGoodsPlatformService/manageStoreGoodsAttribute】 jd.o2o.StoreGoodsPlatformService.manageStoreGoodsAttribute" [ref=e652]:
+                      - generic [ref=e654]:
+                        - generic "批量维护门店商品属性【StoreGoodsPlatformService/manageStoreGoodsAttribute】" [ref=e655]
+                        - generic "jd.o2o.StoreGoodsPlatformService.manageStoreGoodsAttribute" [ref=e656]
+                    - cell "此接口秒送业务的支持。到家业务不支持。" [ref=e657]:
+                      - generic "此接口秒送业务的支持。到家业务不支持。" [ref=e659]
+                    - cell [ref=e660]:
+                      - button "查看文档" [ref=e662] [cursor=pointer]
+                  - row [ref=e664]:
+                    - cell "查询门店下门店商品绑定关系接口【StoreGoodsPlatformService/queryRollStationRelatedSku】 jd.o2o.StoreGoodsPlatformService.queryRollStationRelatedSku" [ref=e665]:
+                      - generic [ref=e667]:
+                        - generic "查询门店下门店商品绑定关系接口【StoreGoodsPlatformService/queryRollStationRelatedSku】" [ref=e668]
+                        - generic "jd.o2o.StoreGoodsPlatformService.queryRollStationRelatedSku" [ref=e669]
+                    - cell "此接口可查询门店下绑定商品数据，分页一次返回200商品，如rollId=-1的时候表示分页结束" [ref=e670]:
+                      - generic "此接口可查询门店下绑定商品数据，分页一次返回200商品，如rollId=-1的时候表示分页结束" [ref=e672]
+                    - cell [ref=e673]:
+                      - button "查看文档" [ref=e675] [cursor=pointer]
+                  - row [ref=e677]:
+                    - cell "查询门店商品关系接口【StoreGoodsPlatformService/queryStoreGoods】 jd.o2o.StoreGoodsPlatformService.queryStoreGoods" [ref=e678]:
+                      - generic [ref=e680]:
+                        - generic "查询门店商品关系接口【StoreGoodsPlatformService/queryStoreGoods】" [ref=e681]
+                        - generic "jd.o2o.StoreGoodsPlatformService.queryStoreGoods" [ref=e682]
+                    - cell "查询门店商品关系接口" [ref=e683]:
+                      - generic "查询门店商品关系接口" [ref=e685]
+                    - cell [ref=e686]:
+                      - button "查看文档" [ref=e688] [cursor=pointer]
+                  - row [ref=e690]:
+                    - cell "通过商家skuId查询到家skuId接口【PmsSkuMainService/getSkuByOuterSkuIds】 jd.o2o.PmsSkuMainService.getSkuByOuterSkuIds" [ref=e691]:
+                      - generic [ref=e693]:
+                        - generic "通过商家skuId查询到家skuId接口【PmsSkuMainService/getSkuByOuterSkuIds】" [ref=e694]
+                        - generic "jd.o2o.PmsSkuMainService.getSkuByOuterSkuIds" [ref=e695]
+                    - cell "通过商家skuId查询到家skuId" [ref=e696]:
+                      - generic "通过商家skuId查询到家skuId" [ref=e698]
+                    - cell [ref=e699]:
+                      - button "查看文档" [ref=e701] [cursor=pointer]
+                  - row [ref=e703]:
+                    - cell "新查询商家已上传商品信息列表接口【pms/querySkuInfoList】 jd.o2o.pms.querySkuInfoList" [ref=e704]:
+                      - generic [ref=e706]:
+                        - generic "新查询商家已上传商品信息列表接口【pms/querySkuInfoList】" [ref=e707]
+                        - generic "jd.o2o.pms.querySkuInfoList" [ref=e708]
+                    - cell [ref=e709]:
+                      - 'generic "商家用于查询该商家下已有的商品信息，便于后续同步库存、价格等操作，如果不填写分页信息默认最多返回50条数据。 <br><span style=\"color:red\">searchAfterSkuId字段说明：</span> <br><span style=\"font-weight: bold;\">入参：第一次调用searchAfterSkuId为空，之后每次调用把上次调用结果返回的searchAfterSkuId值传入 <br><span style=\"font-weight: bold;\">出参：用作下次查询的searchAfterSkuId入参，当返回为空时则查询结束 <br><span style=\"color:red\"></span>" [ref=e711]':
+                        - text: 商家用于查询该商家下已有的商品信息，便于后续同步库存、价格等操作，如果不填写分页信息默认最多返回50条数据。 searchAfterSkuId字段说明：
+                        - generic [ref=e713]:
+                          - text: 入参：第一次调用searchAfterSkuId为空，之后每次调用把上次调用结果返回的searchAfterSkuId值传入
+                          - generic [ref=e714]: 出参：用作下次查询的searchAfterSkuId入参，当返回为空时则查询结束
+                    - cell [ref=e715]:
+                      - button "查看文档" [ref=e717] [cursor=pointer]
+                  - row [ref=e719]:
+                    - cell "解绑商家商品-门店商品关联关系【StoreGoodsPlatformService/unBindStoreGoods】 jd.o2o.StoreGoodsPlatformService.unBindStoreGoods" [ref=e720]:
+                      - generic [ref=e722]:
+                        - generic "解绑商家商品-门店商品关联关系【StoreGoodsPlatformService/unBindStoreGoods】" [ref=e723]
+                        - generic "jd.o2o.StoreGoodsPlatformService.unBindStoreGoods" [ref=e724]
+                    - cell "门店不想经营该商品时，用来解绑商家商品和门店商品的关系，解绑后，门店将看不到该商品信息，也不可以维护商品的库存、可售状态、价格等信息" [ref=e725]:
+                      - generic "门店不想经营该商品时，用来解绑商家商品和门店商品的关系，解绑后，门店将看不到该商品信息，也不可以维护商品的库存、可售状态、价格等信息" [ref=e727]
+                    - cell [ref=e728]:
+                      - button "查看文档" [ref=e730] [cursor=pointer]
+                  - row [ref=e732]:
+                    - cell "绑定商家商品-门店商品关联关系【StoreGoodsPlatformService/bindStoreGoods】 jd.o2o.StoreGoodsPlatformService.bindStoreGoods" [ref=e733]:
+                      - generic [ref=e735]:
+                        - generic "绑定商家商品-门店商品关联关系【StoreGoodsPlatformService/bindStoreGoods】" [ref=e736]
+                        - generic "jd.o2o.StoreGoodsPlatformService.bindStoreGoods" [ref=e737]
+                    - cell "门店要经营该商品时，用来绑定商家商品和门店商品的关系，将商家商品绑定至门店，绑定后，门店可看到该商品信息，并维护该商品的库存、可售状态、价格等信息" [ref=e738]:
+                      - generic "门店要经营该商品时，用来绑定商家商品和门店商品的关系，将商家商品绑定至门店，绑定后，门店可看到该商品信息，并维护该商品的库存、可售状态、价格等信息" [ref=e740]
+                    - cell [ref=e741]:
+                      - button "查看文档" [ref=e743] [cursor=pointer]
+                  - row [ref=e745]:
+                    - cell "添加加工服务属性【StoreGoodsPlatformService/manageProcessService】 jd.o2o.StoreGoodsPlatformService.manageProcessService" [ref=e746]:
+                      - generic [ref=e748]:
+                        - generic "添加加工服务属性【StoreGoodsPlatformService/manageProcessService】" [ref=e749]
+                        - generic "jd.o2o.StoreGoodsPlatformService.manageProcessService" [ref=e750]
+                    - cell "添加加工服务属性此接口需：【根据类目id查询类目下关联特殊属性】传入商品对应的末级分类id以及加工服务code=12，获取当前商品当前分类可使用的加工服务类型" [ref=e751]:
+                      - generic "添加加工服务属性此接口需：【根据类目id查询类目下关联特殊属性】传入商品对应的末级分类id以及加工服务code=12，获取当前商品当前分类可使用的加工服务类型" [ref=e753]
+                    - cell [ref=e754]:
+                      - button "查看文档" [ref=e756] [cursor=pointer]
+                  - row [ref=e758]:
+                    - cell "根据类目id查询类目下关联特殊属性【PmsSpecialAttrService/queryCategoryRelationSpecialAttr】 jd.o2o.PmsSpecialAttrService.queryCategoryRelationSpecialAttr" [ref=e759]:
+                      - generic [ref=e761]:
+                        - generic "根据类目id查询类目下关联特殊属性【PmsSpecialAttrService/queryCategoryRelationSpecialAttr】" [ref=e762]
+                        - generic "jd.o2o.PmsSpecialAttrService.queryCategoryRelationSpecialAttr" [ref=e763]
+                    - cell "根据类目id查询类目下关联特殊属性" [ref=e764]:
+                      - generic "根据类目id查询类目下关联特殊属性" [ref=e766]
+                    - cell [ref=e767]:
+                      - button "查看文档" [ref=e769] [cursor=pointer]
+                  - row [ref=e771]:
+                    - cell "根据特殊属性id查询特殊属性值【PmsSpecialAttrService/querySpecialAttrDicByCodes】 jd.o2o.PmsSpecialAttrService.querySpecialAttrDicByCodes" [ref=e772]:
+                      - generic [ref=e774]:
+                        - generic "根据特殊属性id查询特殊属性值【PmsSpecialAttrService/querySpecialAttrDicByCodes】" [ref=e775]
+                        - generic "jd.o2o.PmsSpecialAttrService.querySpecialAttrDicByCodes" [ref=e776]
+                    - cell "根据特殊属性id查询特殊属性值" [ref=e777]:
+                      - generic "根据特殊属性id查询特殊属性值" [ref=e779]
+                    - cell [ref=e780]:
+                      - button "查看文档" [ref=e782] [cursor=pointer]
+                  - row [ref=e784]:
+                    - cell "根据商品名称获取推荐的类目品牌接口【pms/getSkuCateBrandBySkuName】 jd.o2o.pms.getSkuCateBrandBySkuName" [ref=e785]:
+                      - generic [ref=e787]:
+                        - generic "根据商品名称获取推荐的类目品牌接口【pms/getSkuCateBrandBySkuName】" [ref=e788]
+                        - generic "jd.o2o.pms.getSkuCateBrandBySkuName" [ref=e789]
+                    - cell "根据商品名称获取推荐的类目品牌" [ref=e790]:
+                      - generic "根据商品名称获取推荐的类目品牌" [ref=e792]
+                    - cell [ref=e793]:
+                      - button "查看文档" [ref=e795] [cursor=pointer]
+                  - row [ref=e797]:
+                    - cell "查询类目属性字典信息接口【pms/getAllSkuCategoryAttr】 jd.o2o.pms.getAllSkuCategoryAttr" [ref=e798]:
+                      - generic [ref=e800]:
+                        - generic "查询类目属性字典信息接口【pms/getAllSkuCategoryAttr】" [ref=e801]
+                        - generic "jd.o2o.pms.getAllSkuCategoryAttr" [ref=e802]
+                    - cell "类目属性包含：规格、颜色、加工时长等商品属性。类目属性字典库，到家端维护，商家通过这个接口可以查询获取类目属性编号、属性名及属性值. 注：属性名：加工时长（分钟），对应的属性编号：1575877" [ref=e803]:
+                      - generic "类目属性包含：规格、颜色、加工时长等商品属性。类目属性字典库，到家端维护，商家通过这个接口可以查询获取类目属性编号、属性名及属性值. 注：属性名：加工时长（分钟），对应的属性编号：1575877" [ref=e805]
+                    - cell [ref=e806]:
+                      - button "查看文档" [ref=e808] [cursor=pointer]
+                  - row [ref=e810]:
+                    - cell "根据末级类目ID查询类目属性字典信息接口【pms/getSkuCategoryAttrByCategoryId】 jd.o2o.pms.getSkuCategoryAttrByCategoryId" [ref=e811]:
+                      - generic [ref=e813]:
+                        - generic "根据末级类目ID查询类目属性字典信息接口【pms/getSkuCategoryAttrByCategoryId】" [ref=e814]
+                        - generic "jd.o2o.pms.getSkuCategoryAttrByCategoryId" [ref=e815]
+                    - cell "通过此接口可以查询末级类目下相关联可以维护的类目属性" [ref=e816]:
+                      - generic "通过此接口可以查询末级类目下相关联可以维护的类目属性" [ref=e818]
+                    - cell [ref=e819]:
+                      - button "查看文档" [ref=e821] [cursor=pointer]
+                  - row [ref=e823]:
+                    - cell "删除商品类目属性值信息接口【pms/deleteSkuCateAttrValue】 jd.o2o.pms.deleteSkuCateAttrValue" [ref=e824]:
+                      - generic [ref=e826]:
+                        - generic "删除商品类目属性值信息接口【pms/deleteSkuCateAttrValue】" [ref=e827]
+                        - generic "jd.o2o.pms.deleteSkuCateAttrValue" [ref=e828]
+                    - cell "删除商品类目属性值" [ref=e829]:
+                      - generic "删除商品类目属性值" [ref=e831]
+                    - cell [ref=e832]:
+                      - button "查看文档" [ref=e834] [cursor=pointer]
+                  - row [ref=e836]:
+                    - cell "新增商品类目属性值信息接口【pms/addSkuCateAttrValue】 jd.o2o.pms.addSkuCateAttrValue" [ref=e837]:
+                      - generic [ref=e839]:
+                        - generic "新增商品类目属性值信息接口【pms/addSkuCateAttrValue】" [ref=e840]
+                        - generic "jd.o2o.pms.addSkuCateAttrValue" [ref=e841]
+                    - cell [ref=e842]:
+                      - generic "维护商品类目属性值</br>类目属性值：当类目属性类型elementType：为1或3时，valueName为对应的类目属性值的id，其他类型为文本；当类目属性类型为多选时[elementType为3]，valueName使用“SKU_ATTR_V_S_F”对多个属性值id进行拼接。如：1611369SKU_ATTR_V_S_F1611370 表示类目属性选中1611369和1611370两个值" [ref=e844]: 维护商品类目属性值类目属性值：当类目属性类型elementType：为1或3时，valueName为对应的类目属性值的id，其他类型为文本；当类目属性类型为多选时[elementType为3]，valueName使用“SKU_ATTR_V_S_F”对多个属性值id进行拼接。如：1611369SKU_ATTR_V_S_F1611370 表示类目属性选中1611369和1611370两个值
+                    - cell [ref=e845]:
+                      - button "查看文档" [ref=e847] [cursor=pointer]
+            - generic "pagination" [ref=e850]:
+              - generic [ref=e851]: 共 71 条
+              - button "上一页" [disabled] [ref=e852]
+              - list [ref=e856]:
+                - listitem "第 1 页" [ref=e857]: "1"
+                - listitem "第 2 页" [ref=e858] [cursor=pointer]: "2"
+                - listitem "第 3 页" [ref=e859] [cursor=pointer]: "3"
+              - button "下一页" [ref=e860] [cursor=pointer]
+              - generic [ref=e868] [cursor=pointer]:
+                - combobox "请选择" [ref=e869]: 30条/页
+                - generic [ref=e870]: 30条/页
+        - complementary [ref=e875]:
+          - generic [ref=e878]:
+            - generic [ref=e879]: 文档是否帮助到您？
+            - slider "rating" [ref=e880]
+  - button "关闭提示文本" [ref=e68] [cursor=pointer]:
+    - generic [ref=e72]: 👋遇到问题？让我来为你解答！

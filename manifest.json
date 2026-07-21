@@ -22,7 +22,8 @@
         "https://www.languagereactor.com/*",
         "https://doc.hutool.cn/*",
         "https://www.doubao.com/*",
-        "https://dict.youdao.com/*"
+        "https://dict.youdao.com/*",
+        "https://open.jd.com/*"
       ],
       "js": [
         "adjust.js"
