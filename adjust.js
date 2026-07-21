@@ -17,6 +17,7 @@ let interval = window.setInterval(function () {
   adjustQuora();                 // 调整 Quora
   adjustDoubao(1000);            // 调整 豆包，每秒重复执行
   adjustYouDaoDict(1000);            // 调整 有道词典，每秒重复执行
+  adjustJdOpenApi();              // 调整 京东开放平台API文档
 }, 250);
 
 /** 10秒以后停止间隔执行 */
@@ -83,6 +84,7 @@ function adjustDoubao(intervalMs) {
       removeElementsBySelectorArr([
         '#experiment-guidance-suggestions',
         'div[data-testid="onboarding_sug_item"]',
+        'div[data-testid="chat_header_download_client"]',
         'div[data-foundation-type="receive-message-suggest-foundation"]'
       ])
     });
@@ -542,6 +544,41 @@ function adjustWidthAndMenuOfCsdnArticle() {
 }
 
 /** -------------------------- 调整csdn博客的文章页面 结束 -------------------------- */
+
+/** -------------------------- 调整京东开放平台API文档 开始 -------------------------- */
+function adjustJdOpenApi(intervalMs) {
+  // 如果是京东开放平台 API 文档页面，才处理
+  if (isHrefContainAllStrInArr(["https://open.jd.com/", "#/doc/api"])) {
+    handleAdjustment("adjustJdOpenApi", intervalMs, () => {
+      const evalTitle = document.querySelector(".doc-evaluation-title");
+      if (evalTitle && !evalTitle.dataset.adjusted) {
+        evalTitle.dataset.adjusted = "1";
+        evalTitle.textContent = "下载文档";
+        evalTitle.style.cursor = "pointer";
+        evalTitle.addEventListener("click", () => {
+          const articleContent = document.querySelector(".article-content");
+          if (!articleContent) return;
+          const titleEl = document.querySelector(".api-overview-title");
+          let title = "文档";
+          if (titleEl) {
+            title = titleEl.textContent.trim();
+          }
+          const content = articleContent.outerHTML;
+          const blob = new Blob([content], { type: "text/plain;charset=UTF-8" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = title + ".txt";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+      }
+    });
+  }
+}
+/** -------------------------- 调整京东开放平台API文档 结束 -------------------------- */
 
 /** -------------------------- 公共方法定义 开始 -------------------------- */
 
